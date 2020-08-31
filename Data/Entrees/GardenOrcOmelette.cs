@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+* Author: Colton Capps
+* Class name: GardenOrcOmelette.cs
+* Purpose: Represent an entree on the menu at Bleakwind: 
+* Two egg omelette packed with a mix of broccoli, mushrooms, and tomatoes. Topped with cheddar cheese.
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

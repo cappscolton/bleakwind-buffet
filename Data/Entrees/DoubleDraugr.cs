@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+* Author: Colton Capps
+* Class name: DoubleDraugr.cs
+* Purpose: Represent an entree on the menu at Bleakwind: 
+* Double patty burger on a brioche bun. Comes with ketchup, mustard, pickle, cheese, tomato, lettuce, and mayo.
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

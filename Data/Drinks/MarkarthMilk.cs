@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+* Author: Colton Capps
+* Class name: MarkarthMilk.cs
+* Purpose: Represent a drink on the menu at Bleakwind: 2% milk
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;

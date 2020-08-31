@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+* Author: Colton Capps
+* Class name: ThalmorTriple.cs
+* Purpose: Represent an entree on the menu at Bleakwind 
+* Inlcudes two 1/4lb patties with a 1/2lb patty 
+* inbetween with ketchup, mustard, pickle, cheese, tomato, lettuce, mayo, bacon, and an egg.
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

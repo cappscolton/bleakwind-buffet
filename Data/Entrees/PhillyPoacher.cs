@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+* Author: Colton Capps
+* Class name: PhillyPoacher.cs
+* Purpose: Represent an entree on the menu at Bleakwind: 
+* Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

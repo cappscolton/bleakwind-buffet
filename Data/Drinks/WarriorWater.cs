@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+* Author: Colton Capps
+* Class name: WarriorWater.cs
+* Purpose: Represent a drink on the menu at Bleakwind: Water
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;

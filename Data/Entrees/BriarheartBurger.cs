@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+* Author: Colton Capps
+* Class name: BriarheartBurger.cs
+* Purpose: Represent an entree on the menu at Bleakwind
+* Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.
+*/
+
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

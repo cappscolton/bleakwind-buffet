@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+* Author: Colton Capps
+* Class name: CandlehearthCoffee.cs
+* Purpose: Represent a drink on the menu at Bleakwind: Coffee
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;

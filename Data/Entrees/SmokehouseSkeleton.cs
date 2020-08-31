@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+* Author: Colton Capps
+* Class name: SmokehouseSkeleton.cs
+* Purpose: Represent an entree on the menu at Bleakwind: 
+* Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

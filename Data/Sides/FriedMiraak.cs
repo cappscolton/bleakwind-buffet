@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+* Author: Colton Capps
+* Class name: FriedMiraak.cs
+* Purpose: Represent an entree on the menu at Bleakwind
+* Hash brown pancakes
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
