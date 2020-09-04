@@ -12,7 +12,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    class BriarheartBurger
+    public class BriarheartBurger
     {
         private bool bun = true;
         private bool ketchup = true;

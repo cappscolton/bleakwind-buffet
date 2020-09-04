@@ -11,7 +11,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    class DoubleDraugr
+    public class DoubleDraugr
     {
         private bool bun = true;
         private bool ketchup = true;

@@ -11,7 +11,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    class GardenOrcOmelette
+    public class GardenOrcOmelette
     {
         private bool tomato = true;
         private bool mushrooms = true;
