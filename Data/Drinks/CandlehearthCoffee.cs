@@ -102,7 +102,7 @@ namespace BleakwindBuffet.Data.Drinks
                     sz = "Small ";
                     break;
             }
-
+            if (Decaf) return sz + "Decaf Candlehearth Coffee";
             return sz + "Candlehearth Coffee";
         }
     }
