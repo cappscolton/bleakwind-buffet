@@ -11,15 +11,27 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// Class representing the markarth milk drink
+    /// </summary>
     public class MarkarthMilk
     {
+        /* Private variable declaration for markarth milk*/
         private bool ice = false;
+        private Size size = Size.Small;
 
+
+        /// <summary>
+        /// if the drink comes with ice
+        /// </summary>
         public bool Ice
         {
             get { return ice; }
             set { ice = value; }
         }
+        /// <summary>
+        /// The calories of the milk
+        /// </summary>
         public uint Calories
         {
             get
@@ -37,6 +49,10 @@ namespace BleakwindBuffet.Data.Drinks
                 }
             }
         }
+
+        /// <summary>
+        /// THe price of the milk
+        /// </summary>
         public double Price
         {
             get
@@ -54,6 +70,10 @@ namespace BleakwindBuffet.Data.Drinks
                 }
             }
         }
+
+        /// <summary>
+        /// A list of special instructions for preparing the milk
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get
@@ -63,13 +83,15 @@ namespace BleakwindBuffet.Data.Drinks
                 return instruc;
             }
         }
-        private Size size = Size.Small;
         public Size Size
         {
             get { return size; }
             set { size = value; }
         }
-
+        /// <summary>
+        /// Returns a description of the milk
+        /// </summary>
+        /// <returns>A string describing the milk</returns>
         override public string ToString()
         {
             string sz;

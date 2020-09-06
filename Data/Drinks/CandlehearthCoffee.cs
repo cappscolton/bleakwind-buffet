@@ -11,28 +11,47 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// Class representing the candlehearh coffee drink
+    /// </summary>
     public class CandlehearthCoffee
     {
+        /* Private variable declaration for candlehearth coffee*/
         private bool ice = false;
         private bool decaf = false;
         private bool roomForCream = false;
+        private Size size = Size.Small;
 
+        /// <summary>
+        /// if the drink comes with ice
+        /// </summary>
         public bool Ice
         {
             get { return ice; }
             set { ice = value; }
         }
+
+        /// <summary>
+        /// if the drink is decaf
+        /// </summary>
         public bool Decaf
         {
             get { return decaf; }
             set { decaf = value; }
         }
+
+        /// <summary>
+        /// if the drink comes with cream
+        /// </summary>
         public bool RoomForCream
         {
             get { return roomForCream; }
             set { roomForCream = value; }
         }
 
+        /// <summary>
+        /// The calories of the coffee
+        /// </summary>
         public uint Calories
         {
             get
@@ -50,6 +69,10 @@ namespace BleakwindBuffet.Data.Drinks
                 }
             }
         }
+
+        /// <summary>
+        /// THe price of the coffee
+        /// </summary>
         public double Price
         {
             get
@@ -67,6 +90,10 @@ namespace BleakwindBuffet.Data.Drinks
                 }
             }
         }
+
+        /// <summary>
+        /// A list of special instructions for preparing the coffee
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get
@@ -77,13 +104,15 @@ namespace BleakwindBuffet.Data.Drinks
                 return instruc;
             }
         }
-        private Size size = Size.Small;
         public Size Size
         {
             get { return size; }
             set { size = value; }
         }
-
+        /// <summary>
+        /// Returns a description of the coffee
+        /// </summary>
+        /// <returns>A string describing the coffee</returns>
         override public string ToString()
         {
             string sz;
