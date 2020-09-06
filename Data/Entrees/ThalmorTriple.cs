@@ -12,8 +12,13 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// A class representing the thalmor triple side item
+    /// </summary>
     public class ThalmorTriple
     {
+
+        /* Private variable declaration for thalmor triple */
         private bool bun = true;
         private bool ketchup = true;
         private bool pickle = true;
@@ -24,65 +29,116 @@ namespace BleakwindBuffet.Data.Entrees
         private bool mayo = true;
         private bool bacon = true;
         private bool egg = true;
+
+        /// <summary>
+        /// If the entree comes with bacon
+        /// </summary>
         public bool Bacon
         {
             get { return bacon; }
             set { bacon = value; }
         }
+
+        /// <summary>
+        /// If the entree comes with eggs
+        /// </summary>
         public bool Egg
         {
             get { return egg; }
             set { egg = value; }
         }
+
+        /// <summary>
+        /// If the entree comes with tomato
+        /// </summary>
         public bool Tomato
         {
             get { return tomato; }
             set { tomato = value; }
         }
+
+        /// <summary>
+        /// If the entree comes with lettuce
+        /// </summary>
         public bool Lettuce
         {
             get { return lettuce; }
             set { lettuce = value; }
         }
+
+        /// <summary>
+        /// If the entree comes with bacon
+        /// </summary>
         public bool Mayo
         {
             get { return mayo; }
             set { mayo = value; }
         }
 
+        /// <summary>
+        /// If the entree comes with ketchup
+        /// </summary>
         public bool Ketchup
         {
             get { return ketchup; }
             set { ketchup = value; }
         }
+
+        /// <summary>
+        /// If the entree comes with cheese
+        /// </summary>
         public bool Cheese
         {
             get { return cheese; }
             set { cheese = value; }
         }
+
+        /// <summary>
+        /// If the entree comes with a bun
+        /// </summary>
         public bool Bun
         {
             get { return bun; }
             set { bun = value; }
         }
+
+        /// <summary>
+        /// If the entree comes with a pickle
+        /// </summary>
         public bool Pickle
         {
             get { return pickle; }
             set { pickle = value; }
         }
+
+        /// <summary>
+        /// If the entree comes with mustard
+        /// </summary>
         public bool Mustard
         {
             get { return mustard; }
             set { mustard = value; }
         }
+
+        /// <summary>
+        /// THe price of the vokun salad
+        /// </summary>
         public double Price
         {
             get { return 8.32; }
         }
+
+        /// <summary>
+        /// The calories of the triple
+        /// </summary>
         public uint Calories
         {
             get { return 943; }
         }
+
+        /// <summary>
+        /// A list of special instructions for preparing the thalmor triple
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get
@@ -102,6 +158,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Returns a description of the thalmor triple
+        /// </summary>
+        /// <returns>A string describing the thalmor triple</returns>
         override public string ToString()
         {
             return "Thalmor Triple";

@@ -12,8 +12,17 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
+    /// <summary>
+    /// A class representing the fried miraak side item
+    /// </summary>
     public class FriedMiraak
     {
+        /* Private variable declaration for waffle fries */
+        private Size size = Size.Small;
+
+        /// <summary>
+        /// The calories of the fried miraak
+        /// </summary>
         public uint Calories
         {
             get
@@ -23,7 +32,7 @@ namespace BleakwindBuffet.Data.Sides
                     case Size.Small:
                         return 151;
                     case Size.Medium:
-                        return 263;
+                        return 236;
                     case Size.Large:
                         return 306;
                     default:
@@ -31,6 +40,10 @@ namespace BleakwindBuffet.Data.Sides
                 }
             }
         }
+
+        /// <summary>
+        /// THe price of the vokun salad
+        /// </summary>
         public double Price
         {
             get
@@ -48,6 +61,10 @@ namespace BleakwindBuffet.Data.Sides
                 }
             }
         }
+        
+        /// <summary>
+         /// A list of special instructions for preparing the waffle fries
+         /// </summary>
         public List<string> SpecialInstructions
         {
             get
@@ -55,13 +72,20 @@ namespace BleakwindBuffet.Data.Sides
                 return new List<string>();
             }
         }
-        private Size size = Size.Small;
+
+        /// <summary>
+        /// The sie of the miraak side
+        /// </summary>
         public Size Size
         {
             get { return size; }
             set { size = value; }
         }
-
+        
+         /// <summary>
+         /// Returns a description of the waffle fries
+         /// </summary>
+         /// <returns>A string describing the waffle fries</returns>
         override public string ToString()
         {
             string sz;

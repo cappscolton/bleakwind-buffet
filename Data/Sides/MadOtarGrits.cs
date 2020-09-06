@@ -12,8 +12,17 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
+    /// <summary>
+    /// A class representing the vokun salad side item
+    /// </summary>
     public class MadOtarGrits
     {
+        /* Private variable declaration for waffle fries */
+        private Size size = Size.Small;
+
+        /// <summary>
+        /// The calories of the fried miraak
+        /// </summary>
         public uint Calories
         {
             get
@@ -31,6 +40,10 @@ namespace BleakwindBuffet.Data.Sides
                 }
             }
         }
+
+        /// <summary>
+        /// THe price of the vokun salad
+        /// </summary>
         public double Price
         {
             get
@@ -47,7 +60,9 @@ namespace BleakwindBuffet.Data.Sides
                         return 1.22;
                 }
             }
-        }
+        }/// <summary>
+         /// A list of special instructions for preparing the waffle fries
+         /// </summary>
         public List<string> SpecialInstructions
         {
             get
@@ -55,13 +70,20 @@ namespace BleakwindBuffet.Data.Sides
                 return new List<string>();
             }
         }
-        private Size size = Size.Small;
+
+        /// <summary>
+        /// THe size of the grits
+        /// </summary>
         public Size Size
         {
             get { return size; }
             set { size = value; }
         }
 
+        /// <summary>
+        /// Returns a description of the waffle fries
+        /// </summary>
+        /// <returns>A string describing the waffle fries</returns>
         override public string ToString()
         {
             string sz;
