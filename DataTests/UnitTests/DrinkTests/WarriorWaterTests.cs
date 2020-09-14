@@ -28,6 +28,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             WarriorWater ww = new WarriorWater();
             Assert.True(ww.Ice);
         }
+        [Fact]
+        public void ShouldNotIncludeLemonByDefault()
+        {
+            WarriorWater ww = new WarriorWater();
+            Assert.False(ww.Lemon);
+        }
 
         [Fact]
         public void ShouldBeSmallByDefault()
@@ -44,6 +50,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.False(ww.Ice);
             ww.Ice = true;
             Assert.True(ww.Ice);
+        }
+
+        [Fact]
+        public void ShouldBeAbleToSetLemon()
+        {
+            WarriorWater ww = new WarriorWater();
+            ww.Lemon = true;
+            Assert.True(ww.Lemon);
+            ww.Lemon = false;
+            Assert.False(ww.Lemon);
         }
 
         [Fact]
