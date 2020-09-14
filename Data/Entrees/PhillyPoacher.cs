@@ -14,17 +14,12 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A class representing the philly poacher entree
     /// </summary>
-    public class PhillyPoacher
+    public class PhillyPoacher : Entree
     {
-        /* Private variable declaration for philly poacher */
-        private bool sirloin = true;
-        private bool onion = true;
-        private bool roll = true;
-
         /// <summary>
         /// THe price of the philly poacher
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 7.23; }
         }
@@ -32,7 +27,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// The calories of the poacher
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 784; }
         }
@@ -40,41 +35,28 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// if the entree comes with sirloin
         /// </summary>
-        public bool Sirloin
-        {
-            get { return sirloin; }
-            set { sirloin = value; }
-        }
+        public bool Sirloin { get; set; } = true;
 
         /// <summary>
         /// if the entree comes with onion
         /// </summary>
-        public bool Onion
-        {
-            get { return onion; }
-            set { onion = value; }
-        }
+        public bool Onion { get; set; } = true;
 
         /// <summary>
         /// if the entree comes with a roll
         /// </summary>
-        public bool Roll
-        {
-            get { return roll; }
-            set { roll = value; }
-        }
-        
+        public bool Roll { get; set; } = true;
         /// <summary>
-         /// A list of special instructions for preparing the philly poacher
-         /// </summary>
-        public List<string> SpecialInstructions
+        /// A list of special instructions for preparing the philly poacher
+        /// </summary>
+        public override List<string> SpecialInstructions
         {
             get
             {
                 List<string> instruc = new List<string>();
-                if (!sirloin) instruc.Add("Hold sirloin");
-                if (!onion) instruc.Add("Hold onion");
-                if (!roll) instruc.Add("Hold roll");
+                if (!Sirloin) instruc.Add("Hold sirloin");
+                if (!Onion) instruc.Add("Hold onion");
+                if (!Roll) instruc.Add("Hold roll");
                 return instruc;
             }
         }

@@ -14,19 +14,16 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// Class representing waffle fry side
     /// </summary>
-    public class DragonbornWaffleFries
+    public class DragonbornWaffleFries : Side
     {
-        /* Private variable declaration for waffle fries */
-        private Size size = Size.Small;
-
         /// <summary>
         /// The calories of the waffle fries
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
-                switch (size)
+                switch (Size)
                 {
                     case Size.Small:
                         return 77;
@@ -43,11 +40,11 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// The price of the waffe fries
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
-                switch (size)
+                switch (Size)
                 {
                     case Size.Small:
                         return 0.42;
@@ -64,21 +61,12 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// A list of special instructions for preparing the waffle fries
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
                 return new List<string>();
             }
-        }
-
-        /// <summary>
-        /// THe size of the waffle fries
-        /// </summary>
-        public Size Size
-        {
-            get { return size; }
-            set { size = value; }
         }
 
         /// <summary>
@@ -88,7 +76,7 @@ namespace BleakwindBuffet.Data.Sides
         override public string ToString()
         {
             string sz;
-            switch (size)
+            switch (Size)
             {
                 case Size.Small:
                     sz = "Small ";

@@ -14,29 +14,20 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class representing the markarth milk drink
     /// </summary>
-    public class MarkarthMilk
+    public class MarkarthMilk : Drink
     {
-        /* Private variable declaration for markarth milk*/
-        private bool ice = false;
-        private Size size = Size.Small;
-
-
         /// <summary>
         /// if the drink comes with ice
         /// </summary>
-        public bool Ice
-        {
-            get { return ice; }
-            set { ice = value; }
-        }
+        public bool Ice { get; set; } = false;
         /// <summary>
         /// The calories of the milk
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
-                switch (size)
+                switch (Size)
                 {
                     case Size.Small:
                         return 56;
@@ -53,11 +44,11 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// THe price of the milk
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
-                switch (size)
+                switch (Size)
                 {
                     case Size.Small:
                         return 1.05;
@@ -74,19 +65,14 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// A list of special instructions for preparing the milk
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
                 List<string> instruc = new List<string>();
-                if (ice) instruc.Add("Add ice");
+                if (Ice) instruc.Add("Add ice");
                 return instruc;
             }
-        }
-        public Size Size
-        {
-            get { return size; }
-            set { size = value; }
         }
         /// <summary>
         /// Returns a description of the milk
@@ -95,7 +81,7 @@ namespace BleakwindBuffet.Data.Drinks
         override public string ToString()
         {
             string sz;
-            switch (size)
+            switch (Size)
             {
                 case Size.Small:
                     sz = "Small ";

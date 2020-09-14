@@ -15,6 +15,18 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     public class DoubleDraugrTests
     {
         [Fact]
+        public void ShouldBeAnIOrderItem()
+        {
+            DoubleDraugr aj = new DoubleDraugr();
+            Assert.IsAssignableFrom<IOrderItem>(aj);
+        }
+        [Fact]
+        public void ShouldBeAnEntree()
+        {
+            DoubleDraugr bb = new DoubleDraugr();
+            Assert.IsAssignableFrom<Entree>(bb);
+        }
+        [Fact]
         public void ShouldIncludeBunByDefault()
         {
             DoubleDraugr dd = new DoubleDraugr();

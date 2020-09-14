@@ -14,49 +14,32 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class representing the candlehearh coffee drink
     /// </summary>
-    public class CandlehearthCoffee
+    public class CandlehearthCoffee : Drink
     {
-        /* Private variable declaration for candlehearth coffee*/
-        private bool ice = false;
-        private bool decaf = false;
-        private bool roomForCream = false;
-        private Size size = Size.Small;
 
         /// <summary>
         /// if the drink comes with ice
         /// </summary>
-        public bool Ice
-        {
-            get { return ice; }
-            set { ice = value; }
-        }
+        public bool Ice { get; set; } = false;
 
         /// <summary>
         /// if the drink is decaf
         /// </summary>
-        public bool Decaf
-        {
-            get { return decaf; }
-            set { decaf = value; }
-        }
+        public bool Decaf { get; set; } = false;
 
         /// <summary>
         /// if the drink comes with cream
         /// </summary>
-        public bool RoomForCream
-        {
-            get { return roomForCream; }
-            set { roomForCream = value; }
-        }
+        public bool RoomForCream { get; set; } = false;
 
         /// <summary>
         /// The calories of the coffee
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
-                switch (size)
+                switch (Size)
                 {
                     case Size.Small:
                         return 7;
@@ -73,11 +56,11 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// THe price of the coffee
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
-                switch (size)
+                switch (Size)
                 {
                     case Size.Small:
                         return 0.75;
@@ -94,20 +77,15 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// A list of special instructions for preparing the coffee
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
                 List<string> instruc = new List<string>();
-                if (ice) instruc.Add("Add ice");
-                if (roomForCream) instruc.Add("Add cream");
+                if (Ice) instruc.Add("Add ice");
+                if (RoomForCream) instruc.Add("Add cream");
                 return instruc;
             }
-        }
-        public Size Size
-        {
-            get { return size; }
-            set { size = value; }
         }
         /// <summary>
         /// Returns a description of the coffee
@@ -116,7 +94,7 @@ namespace BleakwindBuffet.Data.Drinks
         override public string ToString()
         {
             string sz;
-            switch (size)
+            switch (Size)
             {
                 case Size.Small:
                     sz = "Small ";

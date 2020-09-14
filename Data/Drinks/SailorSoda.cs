@@ -14,28 +14,20 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class representing the sailor soda drink
     /// </summary>
-    public class SailorSoda
+    public class SailorSoda : Drink
     {
-        /* Private variable declaration for sailor soda */
-        private bool ice = true;
-        private Size size = Size.Small;
-
         /// <summary>
         /// if the drink comes with ice
         /// </summary>
-        public bool Ice
-        {
-            get { return ice; }
-            set { ice = value; }
-        }
+        public bool Ice { get; set; } = true;
         /// <summary>
         /// The calories of the soda
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
-                switch (size)
+                switch (Size)
                 {
                     case Size.Small:
                         return 117;
@@ -52,11 +44,11 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// THe price of the soda
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
-                switch (size)
+                switch (Size)
                 {
                     case Size.Small:
                         return 1.42;
@@ -73,20 +65,16 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// A list of special instructions for preparing the soda
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
                 List<string> instruc = new List<string>();
-                if (!ice) instruc.Add("Hold ice");
+                if (!Ice) instruc.Add("Hold ice");
                 return instruc;
             }
         }
-        public Size Size
-        {
-            get { return size; }
-            set { size = value; }
-        }
+
         private SodaFlavor flavor = SodaFlavor.Cherry;
         public SodaFlavor Flavor
         {
@@ -101,7 +89,7 @@ namespace BleakwindBuffet.Data.Drinks
         {
             string sz;
             string flav;
-            switch (size)
+            switch (Size)
             {
                 case Size.Small:
                     sz = "Small ";

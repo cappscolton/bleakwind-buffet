@@ -15,115 +15,62 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A class representing the thalmor triple side item
     /// </summary>
-    public class ThalmorTriple
+    public class ThalmorTriple : Entree
     {
-
-        /* Private variable declaration for thalmor triple */
-        private bool bun = true;
-        private bool ketchup = true;
-        private bool pickle = true;
-        private bool mustard = true;
-        private bool cheese = true;
-        private bool tomato = true;
-        private bool lettuce = true;
-        private bool mayo = true;
-        private bool bacon = true;
-        private bool egg = true;
-
         /// <summary>
         /// If the entree comes with bacon
         /// </summary>
-        public bool Bacon
-        {
-            get { return bacon; }
-            set { bacon = value; }
-        }
+        public bool Bacon { get; set; } = true;
 
         /// <summary>
         /// If the entree comes with eggs
         /// </summary>
-        public bool Egg
-        {
-            get { return egg; }
-            set { egg = value; }
-        }
+        public bool Egg { get; set; } = true;
 
         /// <summary>
         /// If the entree comes with tomato
         /// </summary>
-        public bool Tomato
-        {
-            get { return tomato; }
-            set { tomato = value; }
-        }
+        public bool Tomato { get; set; } = true;
 
         /// <summary>
         /// If the entree comes with lettuce
         /// </summary>
-        public bool Lettuce
-        {
-            get { return lettuce; }
-            set { lettuce = value; }
-        }
+        public bool Lettuce { get; set; } = true;
 
         /// <summary>
         /// If the entree comes with bacon
         /// </summary>
-        public bool Mayo
-        {
-            get { return mayo; }
-            set { mayo = value; }
-        }
+        public bool Mayo { get; set; } = true;
 
         /// <summary>
         /// If the entree comes with ketchup
         /// </summary>
-        public bool Ketchup
-        {
-            get { return ketchup; }
-            set { ketchup = value; }
-        }
+        public bool Ketchup { get; set; } = true;
 
         /// <summary>
         /// If the entree comes with cheese
         /// </summary>
-        public bool Cheese
-        {
-            get { return cheese; }
-            set { cheese = value; }
-        }
+        public bool Cheese { get; set; } = true;
 
         /// <summary>
         /// If the entree comes with a bun
         /// </summary>
-        public bool Bun
-        {
-            get { return bun; }
-            set { bun = value; }
-        }
+        public bool Bun { get; set; } = true;
 
         /// <summary>
         /// If the entree comes with a pickle
         /// </summary>
-        public bool Pickle
-        {
-            get { return pickle; }
-            set { pickle = value; }
-        }
+        public bool Pickle { get; set; } = true;
 
         /// <summary>
         /// If the entree comes with mustard
         /// </summary>
-        public bool Mustard
-        {
-            get { return mustard; }
-            set { mustard = value; }
-        }
+        public bool Mustard { get; set; } = true;
 
         /// <summary>
         /// THe price of the vokun salad
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 8.32; }
         }
@@ -131,7 +78,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// The calories of the triple
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 943; }
         }
@@ -139,21 +86,21 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// A list of special instructions for preparing the thalmor triple
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
                 List<string> instruc = new List<string>();
-                if (!ketchup) instruc.Add("Hold ketchup");
-                if (!bun) instruc.Add("Hold bun");
-                if (!mustard) instruc.Add("Hold mustard");
-                if (!cheese) instruc.Add("Hold cheese");
-                if (!pickle) instruc.Add("Hold pickle");
-                if (!tomato) instruc.Add("Hold tomato");
-                if (!lettuce) instruc.Add("Hold lettuce");
-                if (!mayo) instruc.Add("Hold mayo");
-                if (!egg) instruc.Add("Hold egg");
-                if (!bacon) instruc.Add("Hold bacon");
+                if (!Ketchup) instruc.Add("Hold ketchup");
+                if (!Bun) instruc.Add("Hold bun");
+                if (!Mustard) instruc.Add("Hold mustard");
+                if (!Cheese) instruc.Add("Hold cheese");
+                if (!Pickle) instruc.Add("Hold pickle");
+                if (!Tomato) instruc.Add("Hold tomato");
+                if (!Lettuce) instruc.Add("Hold lettuce");
+                if (!Mayo) instruc.Add("Hold mayo");
+                if (!Egg) instruc.Add("Hold egg");
+                if (!Bacon) instruc.Add("Hold bacon");
                 return instruc;
             }
         }

@@ -14,19 +14,13 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A class representing the smokehouse skeleton entree
     /// </summary>
-    public class SmokehouseSkeleton
+    public class SmokehouseSkeleton : Entree
     {
-
-        /* Private variable declaration for skeleton */
-        private bool hashBrowns = true;
-        private bool pancake = true;
-        private bool sausageLink = true;
-        private bool egg = true;
 
         /// <summary>
         /// THe price of the smokehouse skeleton
         /// </summary>
-        public double Price 
+        public override double Price 
         {
             get { return 5.62; }
         }
@@ -34,7 +28,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// The calories of the triple
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 602; }
         }
@@ -42,51 +36,35 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         ///  if the entree comes with pancakes
         /// </summary>
-        public bool Pancake
-        {
-            get { return pancake; }
-            set { pancake = value; }
-        }
+        public bool Pancake { get; set; } = true;
 
         /// <summary>
         ///  if the entree comes with eggs
         /// </summary>
-        public bool Egg
-        {
-            get { return egg; }
-            set { egg = value; }
-        }
+        public bool Egg { get; set; } = true;
 
         /// <summary>
         ///  if the entree comes with sausage
         /// </summary>
-        public bool SausageLink
-        {
-            get { return sausageLink; }
-            set { sausageLink = value; }
-        }
+        public bool SausageLink { get; set; } = true;
 
         /// <summary>
         ///  if the entree comes with hash browns
         /// </summary>
-        public bool HashBrowns
-        {
-            get { return hashBrowns; }
-            set { hashBrowns = value; }
-        }
-        
+        public bool HashBrowns { get; set; } = true;
+
         /// <summary>
-         /// A list of special instructions for preparing the skeleton
-         /// </summary>
-        public List<string> SpecialInstructions
+        /// A list of special instructions for preparing the skeleton
+        /// </summary>
+        public override List<string> SpecialInstructions
         {
             get
             {
                 List<string> instruc = new List<string>();
-                if (!hashBrowns) instruc.Add("Hold hash browns");
-                if (!sausageLink) instruc.Add("Hold sausage");
-                if (!egg) instruc.Add("Hold eggs");
-                if (!pancake) instruc.Add("Hold pancakes");
+                if (!HashBrowns) instruc.Add("Hold hash browns");
+                if (!SausageLink) instruc.Add("Hold sausage");
+                if (!Egg) instruc.Add("Hold eggs");
+                if (!Pancake) instruc.Add("Hold pancakes");
                 return instruc;
             }
         }/// <summary>

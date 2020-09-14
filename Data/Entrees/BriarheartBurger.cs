@@ -15,64 +15,37 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A class representing the briarheart burger entree
     /// </summary>
-    public class BriarheartBurger
+    public class BriarheartBurger : Entree
     {
-        /* Private variable declaration for briarheart burger */
-        private bool bun = true;
-        private bool ketchup = true;
-        private bool pickle = true;
-        private bool mustard = true;
-        private bool cheese = true;
-
         /// <summary>
         /// if the entree comes with ketchup
         /// </summary>
-        public bool Ketchup
-        {
-            get { return ketchup; }
-            set { ketchup = value; }
-        }
+        public bool Ketchup { get; set; } = true;
 
         /// <summary>
         /// if the entree comes with cheese
         /// </summary>
-        public bool Cheese
-        {
-            get { return cheese; }
-            set { cheese = value; }
-        }
+        public bool Cheese { get; set; } = true;
 
         /// <summary>
         /// if the entree comes with pickle
         /// </summary>
-        public bool Bun
-        {
-            get { return bun; }
-            set { bun = value; }
-        }
+        public bool Bun { get; set; } = true;
 
         /// <summary>
         /// if the entree comes with ketchup
         /// </summary>
-        public bool Pickle
-        {
-            get { return pickle; }
-            set { pickle = value; }
-        }
+        public bool Pickle { get; set; } = true;
 
         /// <summary>
         /// if the entree comes with mustard
         /// </summary>
-        public bool Mustard
-        {
-            get { return mustard; }
-            set { mustard = value; }
-        }
+        public bool Mustard { get; set; } = true;
 
         /// <summary>
         /// THe price of the burger
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 6.32; }
         }
@@ -80,7 +53,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// The calories of the briarheart burger
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 743; }
         }
@@ -88,15 +61,15 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
          /// A list of special instructions for preparing the briarheart burger
          /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get {
                 List<string> instruc = new List<string>();
-                if (!ketchup) instruc.Add("Hold ketchup");
-                if (!bun) instruc.Add("Hold bun");
-                if (!mustard) instruc.Add("Hold mustard");
-                if (!cheese) instruc.Add("Hold cheese");
-                if (!pickle) instruc.Add("Hold pickle");
+                if (!Ketchup) instruc.Add("Hold ketchup");
+                if (!Bun) instruc.Add("Hold bun");
+                if (!Mustard) instruc.Add("Hold mustard");
+                if (!Cheese) instruc.Add("Hold cheese");
+                if (!Pickle) instruc.Add("Hold pickle");
                 return instruc;
             }
         }

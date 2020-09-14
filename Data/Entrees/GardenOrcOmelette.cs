@@ -14,18 +14,12 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A class representing the garden orc omelette entree
     /// </summary>
-    public class GardenOrcOmelette
+    public class GardenOrcOmelette : Entree
     {
-        /* Private variable declaration for omelette */
-        private bool tomato = true;
-        private bool mushrooms = true;
-        private bool broccoli = true;
-        private bool cheddar = true;
-
         /// <summary>
         /// The price of the omelette
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 4.57; }
         }
@@ -33,7 +27,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// The calories of the omelette
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 404; }
         }
@@ -41,51 +35,35 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// if the entree comes with broccoli
         /// </summary>
-        public bool Broccoli
-        {
-            get { return broccoli; }
-            set { broccoli = value; }
-        }
+        public bool Broccoli { get; set; } = true;
 
         /// <summary>
         /// if the entree comes with cheddar
         /// </summary>
-        public bool Cheddar
-        {
-            get { return cheddar; }
-            set { cheddar = value; }
-        }
+        public bool Cheddar { get; set; } = true;
 
         /// <summary>
         /// if the entree comes with mushrooms
         /// </summary>
-        public bool Mushrooms
-        {
-            get { return mushrooms; }
-            set { mushrooms = value; }
-        }
+        public bool Mushrooms { get; set; } = true;
 
         /// <summary>
         /// if the entree comes with tomato
         /// </summary>
-        public bool Tomato
-        {
-            get { return tomato; }
-            set { tomato = value; }
-        }
-        
+        public bool Tomato { get; set; } = true;
+
         /// <summary>
-         /// A list of special instructions for preparing the omelette
-         /// </summary>
-        public List<string> SpecialInstructions
+        /// A list of special instructions for preparing the omelette
+        /// </summary>
+        public override List<string> SpecialInstructions
         {
             get
             {
                 List<string> instruc = new List<string>();
-                if (!broccoli) instruc.Add("Hold broccoli");
-                if (!cheddar) instruc.Add("Hold cheddar");
-                if (!mushrooms) instruc.Add("Hold mushrooms");
-                if (!tomato) instruc.Add("Hold tomato");
+                if (!Broccoli) instruc.Add("Hold broccoli");
+                if (!Cheddar) instruc.Add("Hold cheddar");
+                if (!Mushrooms) instruc.Add("Hold mushrooms");
+                if (!Tomato) instruc.Add("Hold tomato");
                 return instruc;
             }
         }

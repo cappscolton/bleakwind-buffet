@@ -14,45 +14,22 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class representing the warrior water drink
     /// </summary>
-    public class WarriorWater
+    public class WarriorWater : Drink
     {
-        /* Private variable declaration for warrior water */
-        private Size size = Size.Small;
-        private bool ice = true;
-        private bool lemon = false;
-
-
-        /// <summary>
-        /// The size of the water
-        /// </summary>
-        public Size Size
-        {
-            get { return size; }
-            set { size = value; }
-        }
-
         /// <summary>
         /// if the drink comes with ice
         /// </summary>
-        public bool Ice
-        {
-            get { return ice; }
-            set { ice = value; }
-        }
+        public bool Ice { get; set; } = true;
 
         /// <summary>
         /// if the drink comes with lemon
         /// </summary>
-        public bool Lemon
-        {
-            get { return lemon; }
-            set { lemon = value; }
-        }
+        public bool Lemon { get; set; } = false;
 
         /// <summary>
         /// The calories of the water
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 0; }
         }
@@ -60,7 +37,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// THe price of the water
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 0.0; }
         }
@@ -68,13 +45,13 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// A list of special instructions for preparing the water
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
                 List<string> instruc = new List<string>();
-                if (!ice) instruc.Add("Hold ice");
-                if (lemon) instruc.Add("Add lemon");
+                if (!Ice) instruc.Add("Hold ice");
+                if (Lemon) instruc.Add("Add lemon");
                 return instruc;
             }
         }
@@ -85,7 +62,7 @@ namespace BleakwindBuffet.Data.Drinks
         override public string ToString()
         {
             string sz;
-            switch (size)
+            switch (Size)
             {
                 case Size.Small:
                     sz = "Small ";
