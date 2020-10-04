@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
@@ -14,23 +15,79 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class representing the candlehearh coffee drink
     /// </summary>
-    public class CandlehearthCoffee : Drink
+    public class CandlehearthCoffee : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// event for implementing PropertyChange notifications
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// if the drink comes with ice
+        /// size of the drink, invokes PropertyChanged event on size, price, and calories
         /// </summary>
-        public bool Ice { get; set; } = false;
+        public override Size Size
+        {
+            get => base.Size;
+            set
+            {
+                base.Size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            }
+        }
 
         /// <summary>
-        /// if the drink is decaf
+        /// private backing variable for ice
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        private bool ice = false;
+        /// <summary>
+        /// if the drink comes with ice, notifies for property changes to ice and special instructions
+        /// </summary>
+        public bool Ice
+        {
+            get => ice;
+            set
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
 
         /// <summary>
-        /// if the drink comes with cream
+        /// private backing variable for decaf
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        private bool decaf = false;
+        /// <summary>
+        /// if the drink comes with decaf, notifies for property changes to decaf and special instructions
+        /// </summary>
+        public bool Decaf
+        {
+            get => decaf;
+            set
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        /// <summary>
+        /// private backing variable for cream
+        /// </summary>
+        private bool cream = false;
+        /// <summary>
+        /// if the drink comes with crean, notifies for property changes to cream and special instructions
+        /// </summary>
+        public bool RoomForCream
+        {
+            get => cream;
+            set
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
         /// The calories of the coffee

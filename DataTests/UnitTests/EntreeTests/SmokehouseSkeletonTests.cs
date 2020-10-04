@@ -129,6 +129,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldReturnCorrectToString()
         {
+            SmokehouseSkeleton pp = new SmokehouseSkeleton();
+            Assert.Equal(pp.ToString(), "Smokehouse Skeleton");
         }
     }
 }

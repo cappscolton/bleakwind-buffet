@@ -38,10 +38,23 @@ namespace BleakwindBuffet.Data
         public static IEnumerable<IOrderItem> Sides()
         {
             List<IOrderItem> list = new List<IOrderItem>();
-            list.Add(new DragonbornWaffleFries());
-            list.Add(new FriedMiraak());
-            list.Add(new MadOtarGrits());
-            list.Add(new VokunSalad());
+            foreach (Size s in Enum.GetValues(typeof(Size)))
+            {
+                DragonbornWaffleFries d = new DragonbornWaffleFries();
+                FriedMiraak f = new FriedMiraak();
+                MadOtarGrits m = new MadOtarGrits();
+                VokunSalad v = new VokunSalad();
+                d.Size = s;
+                f.Size = s;
+                m.Size = s;
+                v.Size = s;
+
+                list.Add(d);
+                list.Add(f);
+                list.Add(m);
+                list.Add(v);
+            }
+            
             return list;
         }
         /// <summary>
