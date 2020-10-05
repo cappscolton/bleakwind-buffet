@@ -1,10 +1,9 @@
 ﻿/*
 * Author: Colton Capps
-* Class name: MarkarthMilkCustomizer.cs
-* Purpose: Create a user control for customizing a drink
+* Class name: PhillyPoacherCustomizer.cs
+* Purpose: Create a user control for customizing an entree
 */
-
-using System;
+using BleakwindBuffet.Data.Entrees;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,13 +19,14 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for MarkarthMilkCustomizer.xaml
+    /// Interaction logic for PhillyPoacherCustomizer.xaml
     /// </summary>
-    public partial class MarkarthMilkCustomizer : UserControl
+    public partial class PhillyPoacherCustomizer : UserControl
     {
-        public MarkarthMilkCustomizer()
+        public PhillyPoacherCustomizer()
         {
             InitializeComponent();
+            this.DataContext = new PhillyPoacher();
         }
         /// <summary>
         /// Add to order and return to main menu
@@ -38,13 +38,16 @@ namespace PointOfSale
             //add to order component text
             Button b = sender as Button;
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
+            w.OrderText.Text += "\n" + DataContext.ToString();
+            w.addToTotal();
             w.changePrimaryMenu("Selection");
         }
+
         /// <summary>
         /// Remove from order and return to main menu
         /// </summary>
         /// <param name="sender">click event args</param>
-        /// <param name="e">click event args</param>using System;
+        /// <param name="e">click event args</param>using System;using System;using System;using System;using System;using System;
         void cancelCustomizing(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;

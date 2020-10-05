@@ -1,7 +1,8 @@
-﻿/*
+﻿
+/*
 * Author: Colton Capps
-* Class name: SmokehouseSkeletonCustomizer.cs
-* Purpose: Create a user control for customizing an entree
+* Class name: SideCustomizer.cs
+* Purpose: Create a user control for customizing any side item
 */
 using System;
 using System.Collections.Generic;
@@ -19,11 +20,11 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for SmokehouseSkeletonCustomizer.xaml
+    /// Interaction logic for SideCustomizer.xaml
     /// </summary>
-    public partial class SmokehouseSkeletonCustomizer : UserControl
+    public partial class SideCustomizer : UserControl
     {
-        public SmokehouseSkeletonCustomizer()
+        public SideCustomizer()
         {
             InitializeComponent();
         }
@@ -37,6 +38,8 @@ namespace PointOfSale
             //add to order component text
             Button b = sender as Button;
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
+            w.OrderText.Text += "\n" + DataContext.ToString();
+            w.addToTotal();
             w.changePrimaryMenu("Selection");
         }
         /// <summary>

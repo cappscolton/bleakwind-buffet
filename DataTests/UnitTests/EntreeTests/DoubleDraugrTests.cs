@@ -1,6 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
- * Modified by: Colton Capps
+ * Author: Colton Capps
  * Class: DoubleDraugrTests.cs
  * Purpose: Test the DoubleDraugr.cs class in the Data library
  */

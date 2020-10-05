@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.SailorSodaCustomizer"
+﻿<UserControl x:Class="PointOfSale.WarriorWaterCustomizer"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -15,25 +15,23 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Customize Sailor Soda</TextBlock>
+        <TextBlock FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Customize Warrior Water</TextBlock>
 
-        <CheckBox Grid.Row="1" Content="Ice" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left">
+        <CheckBox IsChecked="{Binding Path=Ice}" Grid.Row="1" Content="Ice" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <ComboBox Grid.Row="2">
+
+        <CheckBox IsChecked="{Binding Path=Lemon}" Grid.Row="2" Content="Lemon" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="2" ScaleY="2" />
+            </CheckBox.LayoutTransform>
+        </CheckBox>
+        <ComboBox Grid.Row="3">
             <ComboBoxItem Content="Small"></ComboBoxItem>
             <ComboBoxItem Content="Medium"></ComboBoxItem>
             <ComboBoxItem Content="Large"></ComboBoxItem>
-        </ComboBox>
-        <ComboBox Grid.Row="3">
-            <ComboBoxItem Content="Blackberry"></ComboBoxItem>
-            <ComboBoxItem Content="Cherry"></ComboBoxItem>
-            <ComboBoxItem Content="Lemon"></ComboBoxItem>
-            <ComboBoxItem Content="Grapefruit"></ComboBoxItem>
-            <ComboBoxItem Content="Peach"></ComboBoxItem>
-            <ComboBoxItem Content="Watermelon"></ComboBoxItem>
         </ComboBox>
 
         <Grid Grid.Row="9">

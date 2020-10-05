@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data.Entrees;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,12 +22,14 @@ namespace PointOfSale
         public ThalmorTripleCustomizer()
         {
             InitializeComponent();
+            this.DataContext = new ThalmorTriple();
         }
         void finishCustomizing(object sender, RoutedEventArgs e)
         {
             //add to order component text
             Button b = sender as Button;
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
+            w.OrderText.Text += "\n" + DataContext.ToString();
             w.changePrimaryMenu("Selection");
         }
 

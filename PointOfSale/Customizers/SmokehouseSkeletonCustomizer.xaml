@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.CandlehearthCoffeeCustomizer"
+﻿<UserControl x:Class="PointOfSale.SmokehouseSkeletonCustomizer"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -16,38 +16,43 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Customize Candlehearth Coffee</TextBlock>
+        <TextBlock FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Customize Thalmor Triple</TextBlock>
 
-        <CheckBox Grid.Row="1" Content="Ice" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left">
+        <CheckBox IsChecked="{Binding Path=HashBrowns}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
+            Hash Browns
         </CheckBox>
 
-        <CheckBox Grid.Row="2" Content="Cream" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left">
+        <CheckBox IsChecked="{Binding Path=SausageLink}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="2">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
+            Sausage
         </CheckBox>
 
-        <CheckBox Grid.Row="3" Content="Decaf" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left">
+        <CheckBox IsChecked="{Binding Path=Eggs}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="3">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
+            Eggs
         </CheckBox>
-        <ComboBox Grid.Row="4">
-            <ComboBoxItem Content="Small"></ComboBoxItem>
-            <ComboBoxItem Content="Medium"></ComboBoxItem>
-            <ComboBoxItem Content="Large"></ComboBoxItem>
-        </ComboBox>
 
-        <Grid Grid.Row="9">
+        <CheckBox IsChecked="{Binding Path=Pancake}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="4">
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="2" ScaleY="2" />
+            </CheckBox.LayoutTransform>
+            Pancake
+        </CheckBox>
+
+        <Grid Grid.Row="11">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button FontSize="26" Content="Cancel" Click="cancelCustomizing" Grid.Column="1" Grid.Row="3"/>
-            <Button FontSize="26" Content="Done" Click="finishCustomizing" Grid.Row="3"/>
+            <Button FontSize="26" Content="Cancel" Click="cancelCustomizing" Grid.Column="1" Grid.Row="9"/>
+            <Button FontSize="26" Content="Done" Click="finishCustomizing" Grid.Row="9"/>
         </Grid>
 
 

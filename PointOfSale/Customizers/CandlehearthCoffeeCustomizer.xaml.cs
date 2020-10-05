@@ -1,10 +1,10 @@
 ﻿/*
 * Author: Colton Capps
-* Class name: AretinoAppleJuiceCustomizer.cs
+* Class name: CandlehearthCoffeCustomizer.cs
 * Purpose: Create a user control for customizing a drink
 */
 
-using System;
+using BleakwindBuffet.Data.Drinks;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,11 +20,11 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for AretinoAppleJuiceCustomizer.xaml
+    /// Interaction logic for CandlehearthCoffeeCustomizer.xaml
     /// </summary>
-    public partial class AretinoAppleJuiceCustomizer : UserControl
+    public partial class CandlehearthCoffeeCustomizer : UserControl
     {
-        public AretinoAppleJuiceCustomizer()
+        public CandlehearthCoffeeCustomizer()
         {
             InitializeComponent();
         }
@@ -38,13 +38,16 @@ namespace PointOfSale
             //add to order component text
             Button b = sender as Button;
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
+            w.OrderText.Text += "\n" + DataContext.ToString();
+            w.addToTotal();
             w.changePrimaryMenu("Selection");
         }
+
         /// <summary>
         /// Remove from order and return to main menu
         /// </summary>
         /// <param name="sender">click event args</param>
-        /// <param name="e">click event args</param>
+        /// <param name="e">click event args</param>using System;using System;
         void cancelCustomizing(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;

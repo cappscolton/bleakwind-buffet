@@ -7,4 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <local:OrderComponent/>
+    <Window.Resources>
+        
+        <Style x:Key="baseStyle" TargetType="FrameworkElement">
+        </Style>
+        
+        <Style BasedOn="{StaticResource baseStyle}" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Georgia"/>
+        </Style>
+        
+        <Style BasedOn="{StaticResource baseStyle}" TargetType="Button">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontFamily" Value="Georgia"/>
+        </Style>
+    </Window.Resources>
 </Window>

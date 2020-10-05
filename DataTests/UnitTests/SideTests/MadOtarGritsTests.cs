@@ -1,6 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
- * Modified by: Colton Capps
+ * Author: Colton Capps 
  * Class: MadOtarGritsTests.cs
  * Purpose: Test the MadOtarGrits.cs class in the Data library
  */

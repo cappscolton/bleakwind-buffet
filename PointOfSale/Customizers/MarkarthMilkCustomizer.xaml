@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.AretinoAppleJuiceCustomizer"
+﻿<UserControl x:Class="PointOfSale.MarkarthMilkCustomizer"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -14,13 +14,16 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Customize Apple Juice</TextBlock>
+        <TextBlock FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Customize Markarth Milk</TextBlock>
 
-        <CheckBox Grid.Row="1" Content="Ice" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left">
+        <!-- Checkbox bound to bool on datacontext menu item  -->
+        <CheckBox IsChecked="{Binding Path=Ice}" Grid.Row="1" Content="Ice" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
         </CheckBox>
+
+        <!-- Combobox bound to size on datacontext menu item  -->
         <ComboBox Grid.Row="2">
             <ComboBoxItem Content="Small"></ComboBoxItem>
             <ComboBoxItem Content="Medium"></ComboBoxItem>

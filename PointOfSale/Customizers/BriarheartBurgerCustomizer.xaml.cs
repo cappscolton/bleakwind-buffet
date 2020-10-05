@@ -38,6 +38,8 @@ namespace PointOfSale
             //add to order component text
             Button b = sender as Button;
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
+            w.OrderText.Text += "\n" + DataContext.ToString();
+            w.addToTotal();
             w.changePrimaryMenu("Selection");
         }
         /// <summary>

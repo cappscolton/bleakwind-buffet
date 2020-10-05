@@ -1,7 +1,7 @@
 ﻿/*
 * Author: Colton Capps
-* Class name: CandlehearthCoffeCustomizer.cs
-* Purpose: Create a user control for customizing a drink
+* Class name: GardenOrcOmeletteCustomizer.cs
+* Purpose: Create a user control for customizing an entree
 */
 
 using System.Collections.Generic;
@@ -19,24 +19,27 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CandlehearthCoffeeCustomizer.xaml
+    /// Interaction logic for GardenOrcOmeletteCustomizer.xaml
     /// </summary>
-    public partial class CandlehearthCoffeeCustomizer : UserControl
+    public partial class GardenOrcOmeletteCustomizer : UserControl
     {
-        public CandlehearthCoffeeCustomizer()
+        public GardenOrcOmeletteCustomizer()
         {
             InitializeComponent();
         }
-        /// <summary>
-        /// Add to order and return to main menu
-        /// </summary>
-        /// <param name="sender">click event args</param>
-        /// <param name="e">click event args</param>
+/// <summary>
+/// Add to order and return to main menu
+/// </summary>
+/// <param name="sender">click event args</param>
+/// <param name="e">click event args</param>
+
         void finishCustomizing(object sender, RoutedEventArgs e)
         {
             //add to order component text
             Button b = sender as Button;
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
+            w.OrderText.Text += "\n" + DataContext.ToString();
+            w.addToTotal();
             w.changePrimaryMenu("Selection");
         }
 
@@ -44,7 +47,7 @@ namespace PointOfSale
         /// Remove from order and return to main menu
         /// </summary>
         /// <param name="sender">click event args</param>
-        /// <param name="e">click event args</param>using System;using System;
+        /// <param name="e">click event args</param>using System;using System;using System;using System;using System;
         void cancelCustomizing(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;

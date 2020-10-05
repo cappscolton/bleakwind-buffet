@@ -1,6 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
- * Modified by: Colton Capps
+ * Author: Colton Capps
  * Class: GardenOrcOmeletteTests.cs
  * Purpose: Test the GardenOrcOmelette.cs class in the Data library
  */

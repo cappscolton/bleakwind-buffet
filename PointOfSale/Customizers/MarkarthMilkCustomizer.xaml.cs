@@ -1,9 +1,10 @@
-﻿
-/*
+﻿/*
 * Author: Colton Capps
-* Class name: SideCustomizer.cs
-* Purpose: Create a user control for customizing any side item
+* Class name: MarkarthMilkCustomizer.cs
+* Purpose: Create a user control for customizing a drink
 */
+
+using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,13 +21,14 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for SideCustomizer.xaml
+    /// Interaction logic for MarkarthMilkCustomizer.xaml
     /// </summary>
-    public partial class SideCustomizer : UserControl
+    public partial class MarkarthMilkCustomizer : UserControl
     {
-        public SideCustomizer()
+        public MarkarthMilkCustomizer()
         {
             InitializeComponent();
+            this.DataContext = new MarkarthMilk();
         }
         /// <summary>
         /// Add to order and return to main menu
@@ -38,13 +40,15 @@ namespace PointOfSale
             //add to order component text
             Button b = sender as Button;
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
+            w.OrderText.Text += "\n" + DataContext.ToString();
+            w.addToTotal();
             w.changePrimaryMenu("Selection");
         }
         /// <summary>
         /// Remove from order and return to main menu
         /// </summary>
         /// <param name="sender">click event args</param>
-        /// <param name="e">click event args</param>using System;using System;using System;using System;using System;using System;
+        /// <param name="e">click event args</param>using System;
         void cancelCustomizing(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;

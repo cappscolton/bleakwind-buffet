@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.SmokehouseSkeletonCustomizer"
+﻿<UserControl x:Class="PointOfSale.BriarheartBurgerCustomizer"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -14,39 +14,53 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Customize Thalmor Triple</TextBlock>
+        <TextBlock FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Customize Briarheart Burger</TextBlock>
 
-        <CheckBox FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1">
+        <!-- Checkbox bound to bool on the datacontext menu item -->
+        <CheckBox IsChecked="{Binding Path=Bun}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
-            Hash Browns
+            Bun
         </CheckBox>
 
-        <CheckBox FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="2">
+        <!-- Checkbox bound to bool on the datacontext menu item -->
+        <CheckBox IsChecked="{Binding Path=Ketchup}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="2">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
-            Sausage
+            Ketchup
         </CheckBox>
 
-        <CheckBox FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="3">
+        <!-- Checkbox bound to bool on the datacontext menu item -->
+        <CheckBox IsChecked="{Binding Path=Mustard}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="3">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
-            Eggs
+            Mustard
         </CheckBox>
 
-        <CheckBox FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="4">
+        <!-- Checkbox bound to bool on the datacontext menu item -->
+        <CheckBox IsChecked="{Binding Path=Cheese}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="4">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
-            Pancake
+            Cheese
         </CheckBox>
 
-        <Grid Grid.Row="11">
+        <!-- Checkbox bound to bool on the datacontext menu item -->
+        <CheckBox IsChecked="{Binding Path=Pickle}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="5">
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="2" ScaleY="2" />
+            </CheckBox.LayoutTransform>
+            Pickle
+        </CheckBox>
+
+        <!-- Buttons to finish or cancel -->
+        <Grid Grid.Row="9">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>

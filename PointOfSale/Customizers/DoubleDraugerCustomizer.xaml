@@ -22,62 +22,71 @@
 
         <TextBlock FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Customize Double Draugr</TextBlock>
 
-        <CheckBox FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1">
+        <!-- Checkbox bound to bool on datacontext menu item -->
+        <CheckBox IsChecked="{Binding Path=Bun}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
             Bun
         </CheckBox>
 
-        <CheckBox FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="2">
+        <!-- Checkbox bound to bool on datacontext menu item -->
+        <CheckBox IsChecked="{Binding Path=Ketchup}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="2">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
             Ketchup
         </CheckBox>
 
-        <CheckBox FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="3">
+        <!-- Checkbox bound to bool on datacontext menu item -->
+        <CheckBox IsChecked="{Binding Path=Mustard}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="3">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
             Mustard
         </CheckBox>
 
-        <CheckBox FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="4">
+        <!-- Checkbox bound to bool on datacontext menu item -->
+        <CheckBox IsChecked="{Binding Path=Cheese}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="4">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
             Cheese
         </CheckBox>
 
-        <CheckBox FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="5">
+        <!-- Checkbox bound to bool on datacontext menu item -->
+        <CheckBox IsChecked="{Binding Path=Pickle}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="5">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
             Pickle
         </CheckBox>
 
-        <CheckBox FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="6">
+        <!-- Checkbox bound to bool on datacontext menu item  -->
+        <CheckBox IsChecked="{Binding Path=Tomato}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="6">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
             Tomato
         </CheckBox>
 
-        <CheckBox FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="7">
+        <!-- Checkbox bound to bool on datacontext menu item -->
+        <CheckBox IsChecked="{Binding Path=Lettuce}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="7">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
             Lettuce
         </CheckBox>
-        
-        <CheckBox FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="8">
+
+        <!-- Checkbox bound to bool on datacontext menu item -->
+        <CheckBox IsChecked="{Binding Path=Mayo}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="8">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
             Mayo
         </CheckBox>
 
+        <!-- Buttons to finish or cancel -->
         <Grid Grid.Row="9">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

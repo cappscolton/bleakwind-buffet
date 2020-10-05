@@ -17,21 +17,24 @@
 
         <TextBlock FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Customize Philly Poacher</TextBlock>
 
-        <CheckBox FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1">
+        <!-- Checkbox bound to bool on datacontext menu item  -->
+        <CheckBox IsChecked="{Binding Path=Sirloin}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
             Sirloin
         </CheckBox>
 
-        <CheckBox FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="2">
+        <!-- Checkbox bound to bool on datacontext menu item  -->
+        <CheckBox IsChecked="{Binding Path=Onion}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="2">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>
             Onion
         </CheckBox>
 
-        <CheckBox FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="3">
+        <!-- Checkbox bound to bool on datacontext menu item  -->
+        <CheckBox IsChecked="{Binding Path=Roll}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="3">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>

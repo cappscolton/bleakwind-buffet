@@ -12,20 +12,26 @@
             <ColumnDefinition Width="0.35*"/>
         </Grid.ColumnDefinitions>
 
+        <!-- Column 0 contains the primary menu, selection or customization -->
         <Border Name="PrimaryMenuBorder" BorderBrush="Black" BorderThickness="1" >
             <local:MenuSelectionComponent/>
         </Border>
 
+        <!-- Column 1 contains all the order details and totals -->
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="4*"/>
-                <RowDefinition/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="0.75*"/>
                 <RowDefinition Height="0.5*"/>
             </Grid.RowDefinitions>
-            <TextBlock Name="OrderNumber" HorizontalAlignment="Center">Order #1</TextBlock>
-            <TextBlock Name="Totals" HorizontalAlignment="Center" Grid.Row="1">Subtotal: $0.00<LineBreak/>Tax: $0.00<LineBreak/>Total: $0.00<LineBreak/></TextBlock>
+            <TextBlock Grid.Row="0" Name="OrderNumber" HorizontalAlignment="Center">Order #1</TextBlock>
+            <TextBlock Grid.Row="1" Name="OrderText" HorizontalAlignment="Center"></TextBlock>
 
-            <Grid Grid.Row="2">
+            <TextBlock Name="Totals" HorizontalAlignment="Center" Grid.Row="2"></TextBlock>
+
+            <!-- This is a grid to contain two buttons, pay and cancel -->
+            <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>

@@ -1,7 +1,6 @@
 ﻿/*
- * Author: Zachery Brunner
- * Modified by: Colton Capps
- * Class: VokunSaladTests.cs
+ * Author: Colton Capps
+  * Class: VokunSaladTests.cs
  * Purpose: Test the VokunSalad.cs class in the Data library
  */
 using Xunit;
