@@ -6,6 +6,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
@@ -14,8 +15,28 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// A class representing the vokun salad side item
     /// </summary>
-    public class VokunSalad : Side
+    public class VokunSalad : Side, INotifyPropertyChanged
     {
+        /// <summary>
+        /// event for implementing PropertyChange notifications
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// size of the drink, invokes PropertyChanged event on size, price, and calories
+        /// </summary>
+        public override Size Size
+        {
+            get => base.Size;
+            set
+            {
+                base.Size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            }
+        }
+
         /// <summary>
         /// The calories of the fried miraak
         /// </summary>

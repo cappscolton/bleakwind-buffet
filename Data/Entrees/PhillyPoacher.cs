@@ -7,6 +7,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
@@ -14,8 +15,14 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A class representing the philly poacher entree
     /// </summary>
-    public class PhillyPoacher : Entree
+    public class PhillyPoacher : Entree, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private bool sirloin = true;
+        private bool roll = true;
+        private bool onion = true;
+
         /// <summary>
         /// THe price of the philly poacher
         /// </summary>
@@ -33,19 +40,46 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <summary>
-        /// if the entree comes with sirloin
+        /// if the entree comes with sirloin, notifies propterychanged handler on changes for this property and specialinstructions
         /// </summary>
-        public bool Sirloin { get; set; } = true;
+        public bool Sirloin
+        {
+            get => sirloin;
+            set
+            {
+                sirloin = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sirloin"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
-        /// if the entree comes with onion
+        /// if the entree comes with onion, notifies propterychanged handler on changes for this property and specialinstructions
         /// </summary>
-        public bool Onion { get; set; } = true;
-
+        public bool Onion
+        {
+            get => onion;
+            set
+            {
+                onion = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Onion"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <summary>
-        /// if the entree comes with a roll
+        /// if the entree comes with roll, notifies propterychanged handler on changes for this property and specialinstructions
         /// </summary>
-        public bool Roll { get; set; } = true;
+        public bool Roll
+        {
+            get => roll;
+            set
+            {
+                roll = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Roll"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
         /// <summary>
         /// A list of special instructions for preparing the philly poacher
         /// </summary>

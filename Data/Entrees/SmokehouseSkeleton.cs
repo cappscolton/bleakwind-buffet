@@ -8,14 +8,16 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// A class representing the smokehouse skeleton entree
     /// </summary>
-    public class SmokehouseSkeleton : Entree
+    public class SmokehouseSkeleton : Entree, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// THe price of the smokehouse skeleton
@@ -33,25 +35,63 @@ namespace BleakwindBuffet.Data.Entrees
             get { return 602; }
         }
 
-        /// <summary>
-        ///  if the entree comes with pancakes
-        /// </summary>
-        public bool Pancake { get; set; } = true;
+        private bool pancake = true;
+        private bool egg = true;
+        private bool sausage = true;
+        private bool hashbrowns = true;
 
         /// <summary>
-        ///  if the entree comes with eggs
+        /// if the entree comes with pancake, notifies propterychanged handler on changes for this property and specialinstructions
         /// </summary>
-        public bool Egg { get; set; } = true;
-
+        public bool Pancake
+        {
+            get => pancake;
+            set
+            {
+                pancake = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pancake"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <summary>
-        ///  if the entree comes with sausage
+        /// if the entree comes with egg, notifies propterychanged handler on changes for this property and specialinstructions
         /// </summary>
-        public bool SausageLink { get; set; } = true;
-
+        public bool Egg
+        {
+            get => egg;
+            set
+            {
+                egg = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Egg"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <summary>
-        ///  if the entree comes with hash browns
+        /// if the entree comes with sausage, notifies propterychanged handler on changes for this property and specialinstructions
         /// </summary>
-        public bool HashBrowns { get; set; } = true;
+        public bool SausageLink
+        {
+            get => sausage;
+            set
+            {
+                sausage = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SausageLink"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+        /// <summary>
+        /// if the entree comes with hashbrowns, notifies propterychanged handler on changes for this property and specialinstructions
+        /// </summary>
+        public bool HashBrowns
+        {
+            get => hashbrowns;
+            set
+            {
+                hashbrowns = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HashBrowns"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
         /// A list of special instructions for preparing the skeleton

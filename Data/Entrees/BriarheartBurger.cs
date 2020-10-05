@@ -8,6 +8,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
@@ -15,35 +16,91 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A class representing the briarheart burger entree
     /// </summary>
-    public class BriarheartBurger : Entree
+    public class BriarheartBurger : Entree, INotifyPropertyChanged
     {
-        /// <summary>
-        /// if the entree comes with ketchup
-        /// </summary>
-        public bool Ketchup { get; set; } = true;
+        private bool ketchup = true;
+        private bool cheese = true;
+        private bool bun = true;
+        private bool pickle = true;
+        private bool mustard = true;
 
         /// <summary>
-        /// if the entree comes with cheese
+        /// event for implementing PropertyChange notifications
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// if the entree comes with pickle
+        /// if the entree comes with ketchup, notifies propterychanged handler on changes for this property and specialinstructions
         /// </summary>
-        public bool Bun { get; set; } = true;
+        public bool Ketchup
+        {
+            get => ketchup;
+            set
+            {
+                ketchup = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
-        /// if the entree comes with ketchup
+        /// if the entree comes with cheese, notifies propterychanged handler on changes for this property and SpecialInstructions
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Cheese
+        {
+            get => cheese;
+            set
+            {
+                cheese = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
-        /// if the entree comes with mustard
+        /// if the entree comes with bun, notifies propterychanged handler on changes for this property and SpecialInstructions
         /// </summary>
-        public bool Mustard { get; set; } = true;
+        public bool Bun
+        {
+            get => bun;
+            set
+            {
+                bun = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
-        /// THe price of the burger
+        /// if the entree comes with pickle, notifies propterychanged handler on changes for this property and SpecialInstructions
+        /// </summary>
+        public bool Pickle
+        {
+            get => pickle;
+            set
+            {
+                pickle = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        /// <summary>
+        /// if the entree comes with mustard, notifies propterychanged handler on changes for this property and SpecialInstructions
+        /// </summary>
+        public bool Mustard
+        {
+            get => mustard;
+            set
+            {
+                mustard = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        /// <summary>
+        /// if the entree comes with ketchup, notifies propterychanged handler on changes for this property and 
         /// </summary>
         public override double Price
         {

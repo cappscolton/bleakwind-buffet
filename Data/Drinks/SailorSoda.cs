@@ -15,7 +15,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class representing the sailor soda drink
     /// </summary>
-    public class SailorSoda : Drink
+    public class SailorSoda : Drink, INotifyPropertyChanged
     {
         /// <summary>
         /// event for implementing PropertyChange notifications
@@ -49,6 +49,7 @@ namespace BleakwindBuffet.Data.Drinks
             get => ice;
             set
             {
+                ice = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
@@ -110,7 +111,8 @@ namespace BleakwindBuffet.Data.Drinks
         public SodaFlavor Flavor
         {
             get { return flavor; }
-            set { flavor = value;
+            set { 
+                flavor = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }

@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
@@ -14,8 +15,28 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// Class representing waffle fry side
     /// </summary>
-    public class DragonbornWaffleFries : Side
+    public class DragonbornWaffleFries : Side, INotifyPropertyChanged
     {
+        /// <summary>
+        /// event for implementing PropertyChange notifications
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// size of the drink, invokes PropertyChanged event on size, price, and calories
+        /// </summary>
+        public override Size Size
+        {
+            get => base.Size;
+            set
+            {
+                base.Size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            }
+        }
+
         /// <summary>
         /// The calories of the waffle fries
         /// </summary>

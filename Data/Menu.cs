@@ -79,9 +79,9 @@ namespace BleakwindBuffet.Data
                 list.Add(mm);
                 list.Add(ww);
             }
-            foreach (Size s in Enum.GetValues(typeof(Size)))
+            foreach (SodaFlavor f in Enum.GetValues(typeof(SodaFlavor))) 
             {
-                foreach (SodaFlavor f in Enum.GetValues(typeof(SodaFlavor)))
+                foreach (Size s in Enum.GetValues(typeof(Size)))
                 {
                     SailorSoda ss = new SailorSoda();
                     ss.Size = s;

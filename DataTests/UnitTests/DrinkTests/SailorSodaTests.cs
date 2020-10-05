@@ -17,6 +17,54 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class SailorSodaTests
     {
         [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var SS = new SailorSoda();
+
+            Assert.PropertyChanged(SS, "Ice", () =>
+            {
+                SS.Ice = true;
+            });
+
+            Assert.PropertyChanged(SS, "Ice", () =>
+            {
+                SS.Ice = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesSizePriceAndCalorieProperties()
+        {
+            var SS = new SailorSoda();
+
+            Assert.PropertyChanged(SS, "Size", () =>
+            {
+                SS.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(SS, "Price", () =>
+            {
+                SS.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(SS, "Calories", () =>
+            {
+                SS.Size = Size.Small;
+            });
+        }
+
+        [Fact]
+        public void ChangingFlavorNotifiesProperties()
+        {
+            var SS = new SailorSoda();
+
+            Assert.PropertyChanged(SS, "Flavor", () =>
+            {
+                SS.Flavor = SodaFlavor.Watermelon;
+            });
+        }
+
+        [Fact]
         public void ShouldBeAnIOrderItem()
         {
             SailorSoda aj = new SailorSoda();

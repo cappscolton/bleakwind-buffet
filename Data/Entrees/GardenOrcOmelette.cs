@@ -7,6 +7,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
@@ -14,8 +15,10 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A class representing the garden orc omelette entree
     /// </summary>
-    public class GardenOrcOmelette : Entree
+    public class GardenOrcOmelette : Entree, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// The price of the omelette
         /// </summary>
@@ -32,25 +35,67 @@ namespace BleakwindBuffet.Data.Entrees
             get { return 404; }
         }
 
-        /// <summary>
-        /// if the entree comes with broccoli
-        /// </summary>
-        public bool Broccoli { get; set; } = true;
+        private bool broccoli = true;
+        private bool cheddar = true;
+        private bool mushrooms = true;
+        private bool tomato = true;
+
 
         /// <summary>
-        /// if the entree comes with cheddar
+        /// if the entree comes with broccoli, notifies propterychanged handler on changes for this property and specialinstructions
         /// </summary>
-        public bool Cheddar { get; set; } = true;
+        public bool Broccoli
+        {
+            get => broccoli;
+            set
+            {
+                broccoli = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Brocolli"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
-        /// if the entree comes with mushrooms
+        /// if the entree comes with tomato, notifies propterychanged handler on changes for this property and specialinstructions
         /// </summary>
-        public bool Mushrooms { get; set; } = true;
+        public bool Tomato
+        {
+            get => tomato;
+            set
+            {
+                tomato = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
-        /// if the entree comes with tomato
+        /// if the entree comes with cheddar, notifies propterychanged handler on changes for this property and specialinstructions
         /// </summary>
-        public bool Tomato { get; set; } = true;
+        public bool Cheddar
+        {
+            get => cheddar;
+            set
+            {
+                cheddar = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheddar"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        /// <summary>
+        /// if the entree comes with mushrooms, notifies propterychanged handler on changes for this property and specialinstructions
+        /// </summary>
+        public bool Mushrooms
+        {
+            get => mushrooms;
+            set
+            {
+                mushrooms = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mushrooms"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
         /// A list of special instructions for preparing the omelette

@@ -1,6 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
- * Modified by: Colton Capps
+ * Author: Colton Capps
  * Class: AretinoAppleJuiceTests.cs
  * Purpose: Test the AretinoAppleJuice.cs class in the Data library
  */
@@ -14,6 +13,43 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class AretinoAppleJuiceTests
     {
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var AJ = new AretinoAppleJuice();
+
+            Assert.PropertyChanged(AJ, "Ice", () =>
+            {
+                AJ.Ice = true;
+            });
+
+            Assert.PropertyChanged(AJ, "Ice", () =>
+            {
+                AJ.Ice = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesSizePriceAndCalorieProperties()
+        {
+            var AJ = new AretinoAppleJuice();
+
+            Assert.PropertyChanged(AJ, "Size", () =>
+            {
+                AJ.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(AJ, "Price", () =>
+            {
+                AJ.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(AJ, "Calories", () =>
+            {
+                AJ.Size = Size.Small;
+            });
+        }
+
         [Fact]
         public void ShouldBeAnIOrderItem()
         {
