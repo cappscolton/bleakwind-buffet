@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
 
 namespace PointOfSale
 {
@@ -29,8 +30,11 @@ namespace PointOfSale
             //add to order component text
             Button b = sender as Button;
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
-            w.OrderText.Text += "\n" + DataContext.ToString();
+            Order o = w.DataContext as Order;
+            o.Add(this.DataContext as IOrderItem);
             w.changePrimaryMenu("Selection");
+            w.OrderListView.SelectedItem = null;
+
         }
 
         void cancelCustomizing(object sender, RoutedEventArgs e)
@@ -38,6 +42,8 @@ namespace PointOfSale
             Button b = sender as Button;
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
             w.changePrimaryMenu("Selection");
+            w.OrderListView.SelectedItem = null;
+
         }
     }
 }

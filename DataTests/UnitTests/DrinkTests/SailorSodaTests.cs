@@ -8,6 +8,8 @@ using System;
 using Xunit;
 
 using BleakwindBuffet.Data;
+using System.ComponentModel;
+
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
 
@@ -15,6 +17,50 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class SailorSodaTests
     {
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            SailorSoda aj = new SailorSoda();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(aj);
+        }
+
+        [Fact]
+        public void ChangingPropertiesNotifiesSpecialInstructionsProperty()
+        {
+            var AJ = new SailorSoda();
+
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
+            {
+                AJ.Ice = true;
+            });
+
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
+            {
+                AJ.Ice = false;
+            });
+
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
+            {
+                AJ.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
+            {
+                AJ.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
+            {
+                AJ.Size = Size.Small;
+            });
+
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
+            {
+                AJ.Flavor = SodaFlavor.Watermelon;
+            });
+        }
+
         [Fact]
         public void ChangingIceNotifiesIceProperty()
         {

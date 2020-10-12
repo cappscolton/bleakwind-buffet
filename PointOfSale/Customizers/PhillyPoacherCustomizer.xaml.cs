@@ -3,6 +3,8 @@
 * Class name: PhillyPoacherCustomizer.cs
 * Purpose: Create a user control for customizing an entree
 */
+
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
 using System.Collections.Generic;
 using System.Text;
@@ -38,9 +40,9 @@ namespace PointOfSale
             //add to order component text
             Button b = sender as Button;
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
-            w.OrderText.Text += "\n" + DataContext.ToString();
-            w.addToTotal();
             w.changePrimaryMenu("Selection");
+            w.OrderListView.SelectedItem = null;
+
         }
 
         /// <summary>
@@ -53,6 +55,8 @@ namespace PointOfSale
             Button b = sender as Button;
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
             w.changePrimaryMenu("Selection");
+            w.OrderListView.SelectedItem = null;
+
         }
     }
 }

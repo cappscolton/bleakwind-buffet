@@ -24,20 +24,52 @@
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="0.75*"/>
                 <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Name="OrderNumber" HorizontalAlignment="Center">Order #1</TextBlock>
-            <TextBlock Grid.Row="1" Name="OrderText" HorizontalAlignment="Center"></TextBlock>
+            <ListView x:Name="OrderListView" IsSynchronizedWithCurrentItem="True" Grid.Row="1" HorizontalAlignment="Center">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock  Text="{Binding}" />
+                                <ListView ItemsSource="{Binding SpecialInstructions}">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Vertical">
+                                                <TextBlock Text="{Binding}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackPanel>
+                            <TextBlock  Text="{Binding Price}" Margin="5,0,0,0" />
+                            
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
-            <TextBlock Name="Totals" HorizontalAlignment="Center" Grid.Row="2"></TextBlock>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="2">
+                <TextBlock FontSize="15" Text="{Binding Subtotal, StringFormat={}Subtotal: {0:C2}}"/>
+                <TextBlock FontSize="15" Text="{Binding Tax, StringFormat={}Tax: {0:C2}}"/>
+                <TextBlock FontSize="15" Text="{Binding Total, StringFormat={}Total: {0:C2}}"/>
+            </StackPanel>
+            
 
-            <!-- This is a grid to contain two buttons, pay and cancel -->
+            <!-- This is a grid to contain a  button to remove selected item -->
             <Grid Grid.Row="3">
+                <Button Content="Remove Selected Item" Click="removeItem"/>
+            </Grid>
+            
+            <!-- This is a grid to contain two buttons, pay and cancel -->
+            <Grid Grid.Row="4">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Button Content="Pay"/>
-                <Button Grid.Column="1" Content="Cancel"/>
+                <Button Grid.Column="1" Click="cancelOrder" Content="Cancel"/>
             </Grid>
             
         </Grid>

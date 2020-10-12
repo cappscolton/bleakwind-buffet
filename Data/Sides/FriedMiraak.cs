@@ -21,7 +21,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// event for implementing PropertyChange notifications
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public override event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// size of the drink, invokes PropertyChanged event on size, price, and calories

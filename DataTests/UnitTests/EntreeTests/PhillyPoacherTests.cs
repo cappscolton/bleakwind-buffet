@@ -6,12 +6,88 @@
 using Xunit;
 
 using BleakwindBuffet.Data;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class PhillyPoacherTests
     {
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            PhillyPoacher aj = new PhillyPoacher();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(aj);
+        }
+
+        [Fact]
+        public void ChangingPropertiesNotifiesSpecialInstructionsProperty()
+        {
+            var x = new PhillyPoacher();
+
+            Assert.PropertyChanged(x, "SpecialInstructions", () =>
+            {
+                x.Sirloin = false;
+            });
+
+            Assert.PropertyChanged(x, "SpecialInstructions", () =>
+            {
+                x.Onion = false;
+            });
+
+            Assert.PropertyChanged(x, "SpecialInstructions", () =>
+            {
+                x.Roll = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingRollNotifiesRollProperty()
+        {
+            PhillyPoacher x = new PhillyPoacher();
+
+            Assert.PropertyChanged(x, "Roll", () =>
+            {
+                x.Roll = false;
+            });
+            Assert.PropertyChanged(x, "Roll", () =>
+            {
+                x.Roll = true;
+            });
+        }
+
+        [Fact]
+        public void ChangingOnionNotifiesOnionProperty()
+        {
+            PhillyPoacher x = new PhillyPoacher();
+
+            Assert.PropertyChanged(x, "Onion", () =>
+            {
+                x.Onion = false;
+            });
+            Assert.PropertyChanged(x, "Onion", () =>
+            {
+                x.Onion = true;
+            });
+        }
+
+        [Fact]
+        public void ChangingSirloinNotifiesSirloinProperty()
+        {
+            PhillyPoacher x = new PhillyPoacher();
+
+            Assert.PropertyChanged(x, "Sirloin", () =>
+            {
+                x.Sirloin = false;
+            });
+            Assert.PropertyChanged(x, "Sirloin", () =>
+            {
+                x.Sirloin = true;
+            });
+        }
+
+
         [Fact]
         public void ShouldBeAnIOrderItem()
         {

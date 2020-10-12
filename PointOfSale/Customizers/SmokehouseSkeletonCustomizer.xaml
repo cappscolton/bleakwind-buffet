@@ -32,7 +32,7 @@
             Sausage
         </CheckBox>
 
-        <CheckBox IsChecked="{Binding Path=Eggs}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="3">
+        <CheckBox IsChecked="{Binding Path=Egg}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="3">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2" />
             </CheckBox.LayoutTransform>

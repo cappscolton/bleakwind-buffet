@@ -4,6 +4,7 @@
 * Purpose: Create a user control for customizing a drink
 */
 
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
@@ -29,30 +30,35 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// Add to order and return to main menu
         /// </summary>
         /// <param name="sender">click event args</param>
         /// <param name="e">click event args</param>
-        void finishCustomizing(object sender, RoutedEventArgs e)
+        protected void finishCustomizing(object sender, RoutedEventArgs e)
         {
             //add to order component text
             Button b = sender as Button;
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
-            w.OrderText.Text += "\n" + DataContext.ToString();
-            w.addToTotal();
+            Order o = w.DataContext as Order;
+            o.Add(this.DataContext as IOrderItem);
             w.changePrimaryMenu("Selection");
+            w.OrderListView.SelectedItem = null;
         }
+
         /// <summary>
         /// Remove from order and return to main menu
         /// </summary>
         /// <param name="sender">click event args</param>
         /// <param name="e">click event args</param>
-        void cancelCustomizing(object sender, RoutedEventArgs e)
+        protected void cancelCustomizing(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
             w.changePrimaryMenu("Selection");
+            w.OrderListView.SelectedItem = null;
+
         }
     }
 }

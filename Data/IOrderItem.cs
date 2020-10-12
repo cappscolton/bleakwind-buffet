@@ -8,8 +8,9 @@ namespace BleakwindBuffet.Data
     /// <summary>
     /// An interface to be implemented by items orderable on the menu (drinks, entrees, and sides)
     /// </summary>
-    public interface IOrderItem
+    public interface IOrderItem : INotifyPropertyChanged
     {
+        new event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         ///  The price of the item
         /// </summary>

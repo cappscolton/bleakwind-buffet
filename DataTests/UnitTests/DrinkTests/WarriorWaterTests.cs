@@ -7,12 +7,53 @@
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
+
 using BleakwindBuffet.Data.Drinks;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class WarriorWaterTests
     {
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            WarriorWater aj = new WarriorWater();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(aj);
+        }
+
+        [Fact]
+        public void ChangingPropertiesNotifiesSpecialInstructionsProperty()
+        {
+            var AJ = new WarriorWater();
+
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
+            {
+                AJ.Ice = false;
+            });
+
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
+            {
+                AJ.Ice = true;
+            });
+
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
+            {
+                AJ.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
+            {
+                AJ.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
+            {
+                AJ.Size = Size.Small;
+            });
+        }
+
         [Fact]
         public void ChangingIceNotifiesIceProperty()
         {

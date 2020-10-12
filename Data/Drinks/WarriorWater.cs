@@ -20,7 +20,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// event for implementing PropertyChange notifications
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public override event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// size of the drink, invokes PropertyChanged event on size, price, and calories
@@ -32,6 +32,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 base.Size = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 

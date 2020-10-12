@@ -9,6 +9,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
@@ -18,6 +19,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// </summary>
     public class ThugsTBone : Entree
     {
+        public override event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// THe price of the vokun salad
         /// </summary>
