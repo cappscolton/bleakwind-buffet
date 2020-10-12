@@ -26,7 +26,7 @@
                 <RowDefinition Height="0.5*"/>
                 <RowDefinition Height="0.5*"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Name="OrderNumber" HorizontalAlignment="Center">Order #1</TextBlock>
+            <TextBlock Text="{Binding nextOrderNumber, StringFormat={}Order #{0}}" Grid.Row="0" Name="OrderNumber" HorizontalAlignment="Center"/>
             <ListView x:Name="OrderListView" HorizontalAlignment="Stretch"  IsSynchronizedWithCurrentItem="True" Grid.Row="1">
                 <ListView.ItemTemplate>
                     <DataTemplate>

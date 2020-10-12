@@ -17,7 +17,7 @@ namespace BleakwindBuffet.Data
             CollectionChanged += CollectionChangedListener;
         }
 
-        private static uint nextOrderNumber = 1;
+        public static uint nextOrderNumber { get; set; } = 0;
 
         void CollectionChangedListener(object sender, NotifyCollectionChangedEventArgs e)
         {
