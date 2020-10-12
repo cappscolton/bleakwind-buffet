@@ -1,12 +1,10 @@
-﻿
-/*
+﻿/*
 * Author: Colton Capps
-* Class name: SideCustomizer.cs
-* Purpose: Create a user control for customizing any side item
+* Class name: GardenOrcOmeletteCustomizer.cs
+* Purpose: Create a user control for customizing an entree
 */
 
 using BleakwindBuffet.Data;
-using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -22,14 +20,13 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for SideCustomizer.xaml
+    /// Interaction logic for GardenOrcOmeletteCustomizer.xaml
     /// </summary>
-    public partial class SideCustomizer : Customizer
+    public partial class GardenOrcOmeletteCustomizer : Customizer
     {
-        public SideCustomizer()
+        public GardenOrcOmeletteCustomizer()
         {
             InitializeComponent();
-            SizeComboBox.ItemsSource = Sizes;
         }
     }
 }

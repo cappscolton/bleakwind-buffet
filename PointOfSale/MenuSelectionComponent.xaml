@@ -41,22 +41,22 @@
             <TextBlock Grid.Row ="4" Grid.Column ="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"  FontSize="25" FontFamily="Georgia">Sides</TextBlock>
             <TextBlock Grid.Row ="7" Grid.Column ="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"  FontSize="25" FontFamily="Georgia">Drinks</TextBlock>
 
-            <Button Click="enterCustomizationMenu" Content="Briarheart Burger" Grid.Row="1" Grid.Column="0"/>
-            <Button Click="enterCustomizationMenu" Content="Double Draugr" Grid.Row="1" Grid.Column="1"/>
-            <Button Click="enterCustomizationMenu" Content="Garden Orc Omelette" Grid.Row="1" Grid.Column="2"/>
-            <Button Click="enterCustomizationMenu" Content="Philly Poacher" Grid.Row="2" Grid.Column="0"/>
-            <Button Click="enterCustomizationMenu" Content="Smokehouse Skeleton" Grid.Row="2" Grid.Column="1"/>
-            <Button Click="enterCustomizationMenu" Content="Thalmor Triple" Grid.Row="2" Grid.Column="2"/>
-            <Button Click="enterCustomizationMenu" Content="Thugs T-Bone" Grid.Row="3" Grid.Column="0"/>
-            <Button Click="enterCustomizationMenu" Content="Dragonborn Waffle Fries" Grid.Row="5" Grid.Column="0"/>
-            <Button Click="enterCustomizationMenu" Content="Fried Miraak" Grid.Row="5" Grid.Column="1"/>
-            <Button Click="enterCustomizationMenu" Content="Mad Otar Grits" Grid.Row="5" Grid.Column="2"/>
-            <Button Click="enterCustomizationMenu" Content="Vokun Salad" Grid.Row="6" Grid.Column="0"/>
-            <Button Click="enterCustomizationMenu" Content="Aretino Apple Juice" Grid.Row="8" Grid.Column="0"/>
-            <Button Click="enterCustomizationMenu" Content="Candlehearth Coffee" Grid.Row="8" Grid.Column="1"/>
-            <Button Click="enterCustomizationMenu" Content="Markarth Milk" Grid.Row="8" Grid.Column="2"/>
-            <Button Click="enterCustomizationMenu" Content="Sailor Soda" Grid.Row="9" Grid.Column="0"/>
-            <Button Click="enterCustomizationMenu" Content="Warrior Water" Grid.Row="9" Grid.Column="1"/>
+            <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Briarheart Burger" Grid.Row="1" Grid.Column="0"/>
+            <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Double Draugr" Grid.Row="1" Grid.Column="1"/>
+            <Button Margin="1,0,2,0" Click="enterCustomizationMenu" Content="Garden Orc Omelette" Grid.Row="1" Grid.Column="2"/>
+            <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Philly Poacher" Grid.Row="2" Grid.Column="0"/>
+            <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Smokehouse Skeleton" Grid.Row="2" Grid.Column="1"/>
+            <Button Margin="1,1,2,0" Click="enterCustomizationMenu" Content="Thalmor Triple" Grid.Row="2" Grid.Column="2"/>
+            <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Thugs T-Bone" Grid.Row="3" Grid.Column="0"/>
+            <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Dragonborn Waffle Fries" Grid.Row="5" Grid.Column="0"/>
+            <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Fried Miraak" Grid.Row="5" Grid.Column="1"/>
+            <Button Margin="1,0,2,0" Click="enterCustomizationMenu" Content="Mad Otar Grits" Grid.Row="5" Grid.Column="2"/>
+            <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Vokun Salad" Grid.Row="6" Grid.Column="0"/>
+            <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Aretino Apple Juice" Grid.Row="8" Grid.Column="0"/>
+            <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Candlehearth Coffee" Grid.Row="8" Grid.Column="1"/>
+            <Button Margin="1,0,2,0" Click="enterCustomizationMenu" Content="Markarth Milk" Grid.Row="8" Grid.Column="2"/>
+            <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Sailor Soda" Grid.Row="9" Grid.Column="0"/>
+            <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Warrior Water" Grid.Row="9" Grid.Column="1"/>
 
         </Grid>
     </Grid>

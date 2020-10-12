@@ -23,5 +23,12 @@ namespace BleakwindBuffet.Data.Entrees
         /// The special instructions for preparing the entree
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+        public virtual string Name
+        {
+            get
+            {
+                return ToString();
+            }
+        }
     }
 }

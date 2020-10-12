@@ -1,11 +1,4 @@
-﻿
-/*
-* Author: Colton Capps
-* Class name: SideCustomizer.cs
-* Purpose: Create a user control for customizing any side item
-*/
-
-using BleakwindBuffet.Data;
+﻿using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,18 +11,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for SideCustomizer.xaml
+    /// Interaction logic for ThalmorTripleCustomizer.xaml
     /// </summary>
-    public partial class SideCustomizer : Customizer
+    public partial class ThalmorTripleCustomizer : Customizer
     {
-        public SideCustomizer()
+        public ThalmorTripleCustomizer()
         {
             InitializeComponent();
-            SizeComboBox.ItemsSource = Sizes;
+            this.DataContext = new ThalmorTriple();
         }
     }
 }

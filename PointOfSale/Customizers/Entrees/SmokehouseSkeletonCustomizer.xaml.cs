@@ -1,11 +1,11 @@
-﻿
-/*
+﻿/*
 * Author: Colton Capps
-* Class name: SideCustomizer.cs
-* Purpose: Create a user control for customizing any side item
+* Class name: SmokehouseSkeletonCustomizer.cs
+* Purpose: Create a user control for customizing an entree
 */
 
 using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,14 +22,13 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for SideCustomizer.xaml
+    /// Interaction logic for SmokehouseSkeletonCustomizer.xaml
     /// </summary>
-    public partial class SideCustomizer : Customizer
+    public partial class SmokehouseSkeletonCustomizer : Customizer
     {
-        public SideCustomizer()
+        public SmokehouseSkeletonCustomizer()
         {
             InitializeComponent();
-            SizeComboBox.ItemsSource = Sizes;
         }
     }
 }

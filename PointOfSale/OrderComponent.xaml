@@ -27,12 +27,12 @@
                 <RowDefinition Height="0.5*"/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Name="OrderNumber" HorizontalAlignment="Center">Order #1</TextBlock>
-            <ListView x:Name="OrderListView" IsSynchronizedWithCurrentItem="True" Grid.Row="1" HorizontalAlignment="Center">
+            <ListView x:Name="OrderListView" HorizontalAlignment="Stretch"  IsSynchronizedWithCurrentItem="True" Grid.Row="1">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <StackPanel Orientation="Vertical">
-                                <TextBlock  Text="{Binding}" />
+                                <TextBlock  Text="{Binding Name}" />
                                 <ListView ItemsSource="{Binding SpecialInstructions}">
                                     <ListView.ItemTemplate>
                                         <DataTemplate>

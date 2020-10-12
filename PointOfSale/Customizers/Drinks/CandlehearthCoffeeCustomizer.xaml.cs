@@ -1,12 +1,11 @@
-﻿
-/*
+﻿/*
 * Author: Colton Capps
-* Class name: SideCustomizer.cs
-* Purpose: Create a user control for customizing any side item
+* Class name: CandlehearthCoffeCustomizer.cs
+* Purpose: Create a user control for customizing a drink
 */
 
 using BleakwindBuffet.Data;
-using System;
+using BleakwindBuffet.Data.Drinks;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -22,11 +21,11 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for SideCustomizer.xaml
+    /// Interaction logic for CandlehearthCoffeeCustomizer.xaml
     /// </summary>
-    public partial class SideCustomizer : Customizer
+    public partial class CandlehearthCoffeeCustomizer : Customizer
     {
-        public SideCustomizer()
+        public CandlehearthCoffeeCustomizer()
         {
             InitializeComponent();
             SizeComboBox.ItemsSource = Sizes;

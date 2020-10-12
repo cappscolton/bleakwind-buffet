@@ -14,6 +14,8 @@ namespace BleakwindBuffet.Data
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public string Name => ToString();
+
         private IOrderItem drink = new AretinoAppleJuice();
         private IOrderItem side = new VokunSalad();
         private IOrderItem entree = new BriarheartBurger();

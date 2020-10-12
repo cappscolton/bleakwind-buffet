@@ -1,11 +1,11 @@
-﻿
-/*
+﻿/*
 * Author: Colton Capps
-* Class name: SideCustomizer.cs
-* Purpose: Create a user control for customizing any side item
+* Class name: AretinoAppleJuiceCustomizer.cs
+* Purpose: Create a user control for customizing a drink
 */
 
 using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,18 +18,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Linq;
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for SideCustomizer.xaml
+    /// Interaction logic for AretinoAppleJuiceCustomizer.xaml
     /// </summary>
-    public partial class SideCustomizer : Customizer
+    public partial class AretinoAppleJuiceCustomizer : Customizer
     {
-        public SideCustomizer()
+        public AretinoAppleJuiceCustomizer()
         {
             InitializeComponent();
             SizeComboBox.ItemsSource = Sizes;
         }
+
+        
+        
+
     }
 }

@@ -1,10 +1,6 @@
-﻿/*
-* Author: Colton Capps
-* Class name: SailorSodaCustomizer.cs
-* Purpose: Create a user control for customizing a drink
-*/
-
-using BleakwindBuffet.Data;
+﻿using BleakwindBuffet.Data;
+using System.Linq;
+using BleakwindBuffet.Data.Enums;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -16,47 +12,38 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System;
 
 namespace PointOfSale
 {
-    /// <summary>
-    /// Interaction logic for SailorSodaCustomizer.xaml
-    /// </summary>
-    public partial class SailorSodaCustomizer : UserControl
+    public partial class Customizer : UserControl
     {
-        public SailorSodaCustomizer()
-        {
-            InitializeComponent();
-        }
-        /// <summary>
-        /// Add to order and return to main menu
-        /// </summary>
-        /// <param name="sender">click event args</param>
-        /// <param name="e">click event args</param>
-        void finishCustomizing(object sender, RoutedEventArgs e)
+        public List<BleakwindBuffet.Data.Enums.Size> Sizes => Enum.GetValues(typeof(BleakwindBuffet.Data.Enums.Size)).Cast<BleakwindBuffet.Data.Enums.Size>().ToList();
+
+        public void finishCustomizing(object sender, RoutedEventArgs e)
         {
             //add to order component text
             Button b = sender as Button;
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
             Order o = w.DataContext as Order;
-            o.Add(this.DataContext as IOrderItem);
+            if (!o.Contains(DataContext as IOrderItem))
+            {
+                o.Add(this.DataContext as IOrderItem);
+            }
             w.changePrimaryMenu("Selection");
             w.OrderListView.SelectedItem = null;
-
         }
-
         /// <summary>
         /// Remove from order and return to main menu
         /// </summary>
         /// <param name="sender">click event args</param>
-        /// <param name="e">click event args</param>using System;
-        void cancelCustomizing(object sender, RoutedEventArgs e)
+        /// <param name="e">click event args</param>using System;using System;using System;
+        public void cancelCustomizing(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
             w.changePrimaryMenu("Selection");
             w.OrderListView.SelectedItem = null;
-
         }
     }
 }

@@ -1,11 +1,11 @@
-﻿
-/*
+﻿/*
 * Author: Colton Capps
-* Class name: SideCustomizer.cs
-* Purpose: Create a user control for customizing any side item
+* Class name: MarkarthMilkCustomizer.cs
+* Purpose: Create a user control for customizing a drink
 */
 
 using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,11 +22,11 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for SideCustomizer.xaml
+    /// Interaction logic for MarkarthMilkCustomizer.xaml
     /// </summary>
-    public partial class SideCustomizer : Customizer
+    public partial class MarkarthMilkCustomizer : Customizer
     {
-        public SideCustomizer()
+        public MarkarthMilkCustomizer()
         {
             InitializeComponent();
             SizeComboBox.ItemsSource = Sizes;

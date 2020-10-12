@@ -18,6 +18,7 @@ namespace BleakwindBuffet.Data.Sides
     /// </summary>
     public class FriedMiraak : Side, INotifyPropertyChanged
     {
+
         /// <summary>
         /// event for implementing PropertyChange notifications
         /// </summary>
