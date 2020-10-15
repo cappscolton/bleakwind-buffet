@@ -155,7 +155,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectPrice()
         {
             PhillyPoacher pp = new PhillyPoacher();
-            Assert.Equal(pp.Price, 7.23);
+            Assert.Equal(7.23, pp.Price);
         }
 
         [Fact]
@@ -186,7 +186,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectToString()
         {
             PhillyPoacher pp = new PhillyPoacher();
-            Assert.Equal(pp.ToString(), "Philly Poacher");
+            Assert.Equal("Philly Poacher", pp.ToString());
         }
     }
 }

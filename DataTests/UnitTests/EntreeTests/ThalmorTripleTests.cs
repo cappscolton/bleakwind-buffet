@@ -422,7 +422,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectPrice()
         {
             ThalmorTriple tt = new ThalmorTriple();
-            Assert.Equal(tt.Price, 8.32);
+            Assert.Equal(8.32, tt.Price);
 
         }
 
@@ -473,7 +473,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectToString()
         {
             ThalmorTriple pp = new ThalmorTriple();
-            Assert.Equal(pp.ToString(), "Thalmor Triple");
+            Assert.Equal("Thalmor Triple", pp.ToString());
         }
     }
 }

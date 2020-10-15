@@ -10,6 +10,9 @@ namespace BleakwindBuffet.Data
     /// </summary>
     public interface IOrderItem : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Assign a new PropertyChanged event handler to each IOrderItem because they all can be customized.
+        /// </summary>
         new event PropertyChangedEventHandler PropertyChanged;
         string Name { get; }
         /// <summary>

@@ -192,7 +192,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectPrice()
         {
             SmokehouseSkeleton ss = new SmokehouseSkeleton();
-            Assert.Equal(ss.Price, 5.62);
+            Assert.Equal(5.62, ss.Price);
         }
 
         [Fact]
@@ -225,7 +225,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectToString()
         {
             SmokehouseSkeleton pp = new SmokehouseSkeleton();
-            Assert.Equal(pp.ToString(), "Smokehouse Skeleton");
+            Assert.Equal("Smokehouse Skeleton", pp.ToString());
         }
     }
 }

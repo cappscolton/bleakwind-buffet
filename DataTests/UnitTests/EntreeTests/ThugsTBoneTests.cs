@@ -29,7 +29,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectPrice()
         {
             ThugsTBone ttb = new ThugsTBone();
-            Assert.Equal(ttb.Price, 6.44);
+            Assert.Equal(6.44, ttb.Price);
         }
 
         [Fact]
@@ -51,7 +51,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectToString()
         {
             ThugsTBone ttb = new ThugsTBone();
-            Assert.Equal(ttb.ToString(), "Thugs T-Bone");
+            Assert.Equal("Thugs T-Bone", ttb.ToString());
         }
     }
 }

@@ -331,7 +331,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectPrice()
         {
             DoubleDraugr dd = new DoubleDraugr();
-            Assert.Equal(dd.Price, 7.32);
+            Assert.Equal(7.32, dd.Price);
         }
 
         [Fact]
@@ -345,7 +345,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectToString()
         {
             DoubleDraugr dd = new DoubleDraugr();
-            Assert.Equal(dd.ToString(), "Double Draugr");
+            Assert.Equal("Double Draugr", dd.ToString());
         }
         [Theory]
         [InlineData(true, true, true, true, true, true, true, true)]

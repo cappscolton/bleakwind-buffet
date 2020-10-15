@@ -114,7 +114,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ShouldBySmallByDefault()
         {
             MarkarthMilk mm = new MarkarthMilk();
-            Assert.Equal(mm.Size, Size.Small);
+            Assert.Equal(Size.Small, mm.Size);
         }
 
         [Fact]

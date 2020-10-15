@@ -195,7 +195,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectPrice()
         {
             GardenOrcOmelette goo = new GardenOrcOmelette();
-            Assert.Equal(goo.Price, 4.57);
+            Assert.Equal(4.57, goo.Price);
         }
 
         [Fact]
@@ -228,7 +228,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ShouldReturnCorrectToString()
         {
             GardenOrcOmelette goo = new GardenOrcOmelette();
-            Assert.Equal(goo.ToString(), "Garden Orc Omelette");
+            Assert.Equal("Garden Orc Omelette", goo.ToString());
         }
     }
 }
