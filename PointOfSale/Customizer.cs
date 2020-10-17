@@ -18,8 +18,17 @@ namespace PointOfSale
 {
     public partial class Customizer : UserControl
     {
+        /// <summary>
+        /// Generates a list from the values stored in Sizes enum. Used for displaying the values in a combobox.
+        /// </summary>
         public List<BleakwindBuffet.Data.Enums.Size> Sizes => Enum.GetValues(typeof(BleakwindBuffet.Data.Enums.Size)).Cast<BleakwindBuffet.Data.Enums.Size>().ToList();
 
+        /// <summary>
+        /// A buttonclick event for completion of a customization.
+        /// When this fires, the main window must change and the item must be added to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void finishCustomizing(object sender, RoutedEventArgs e)
         {
             //add to order component text

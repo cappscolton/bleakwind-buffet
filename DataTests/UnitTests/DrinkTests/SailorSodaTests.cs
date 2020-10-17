@@ -39,26 +39,6 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             {
                 AJ.Ice = false;
             });
-
-            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
-            {
-                AJ.Size = Size.Medium;
-            });
-
-            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
-            {
-                AJ.Size = Size.Large;
-            });
-
-            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
-            {
-                AJ.Size = Size.Small;
-            });
-
-            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
-            {
-                AJ.Flavor = SodaFlavor.Watermelon;
-            });
         }
 
         [Fact]

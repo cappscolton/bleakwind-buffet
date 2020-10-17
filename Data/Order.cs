@@ -9,7 +9,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data
 {
-    public class Order : ObservableCollection<IOrderItem>
+    public class Order : ObservableCollection<IOrderItem>, INotifyPropertyChanged
     {
         /// <summary>
         /// Constructor. Increments the overall order number and assigns our listener to the CollectionChanged property
@@ -26,17 +26,48 @@ namespace BleakwindBuffet.Data
         public static uint nextOrderNumber { get; set; } = 0;
 
         /// <summary>
+        /// Listener that objects added to the collection must subscribe to. This allows us to get notifications
+        /// when Price and Calories properties of items in the collection change and reflect that in the Order.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void PropertyChangeListener(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "Price")
+            {
+                OnPropertyChanged(new PropertyChangedEventArgs("Subtotal"));
+                OnPropertyChanged(new PropertyChangedEventArgs("Total"));
+                OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
+            }
+            else if(e.PropertyName == "Calories")
+            {
+                OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
+            }
+        }
+
+        /// <summary>
         /// Listener that makes sure the subtotal, tax, total, and calorie properties are updated when objects are added or removed from the collection
-        /// Subscribe to this in the constructor
+        /// Subscribe to this in the constructor. Also adds listener to properties in the item added so that when its properties update, so does the order.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         void CollectionChangedListener(object sender, NotifyCollectionChangedEventArgs e)
         {
             OnPropertyChanged(new PropertyChangedEventArgs("Subtotal"));
-            OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
             OnPropertyChanged(new PropertyChangedEventArgs("Total"));
+            OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
             OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
+            if (e.Action == NotifyCollectionChangedAction.Add)
+            {
+                foreach (IOrderItem i in e.NewItems)
+                    i.PropertyChanged += PropertyChangeListener;
+            }
+            if (e.Action == NotifyCollectionChangedAction.Remove)
+            {
+                foreach (IOrderItem i in e.OldItems)
+                    i.PropertyChanged -= PropertyChangeListener;
+            }
+
         }
 
         /// <summary>

@@ -64,10 +64,11 @@ namespace BleakwindBuffet.DataTests.UnitTests
         public void RemovingItemRaisesSubtotalPropertyChanged()
         {
             Order x = new Order();
-            x.Add(new BriarheartBurger());
+            BriarheartBurger b = new BriarheartBurger();
+            x.Add(b);
             Assert.PropertyChanged(x, "Subtotal", () =>
             {
-                x.Remove(new BriarheartBurger());
+                x.Remove(b);
             });
         }
 
@@ -75,10 +76,11 @@ namespace BleakwindBuffet.DataTests.UnitTests
         public void RemovingItemRaisesTotalPropertyChanged()
         {
             Order x = new Order();
-            x.Add(new BriarheartBurger());
+            BriarheartBurger b = new BriarheartBurger();
+            x.Add(b);
             Assert.PropertyChanged(x, "Total", () =>
             {
-                x.Remove(new BriarheartBurger());
+                x.Remove(b);
             });
         }
 
@@ -86,10 +88,11 @@ namespace BleakwindBuffet.DataTests.UnitTests
         public void RemovingItemRaisesTaxPropertyChanged()
         {
             Order x = new Order();
-            x.Add(new BriarheartBurger());
+            BriarheartBurger b = new BriarheartBurger();
+            x.Add(b);
             Assert.PropertyChanged(x, "Tax", () =>
             {
-                x.Remove(new BriarheartBurger());
+                x.Remove(b);
             });
         }
 
@@ -97,10 +100,11 @@ namespace BleakwindBuffet.DataTests.UnitTests
         public void RemovingItemRaisesCaloriesPropertyChanged()
         {
             Order x = new Order();
-            x.Add(new BriarheartBurger());
+            BriarheartBurger b = new BriarheartBurger();
+            x.Add(b);
             Assert.PropertyChanged(x, "Calories", () =>
             {
-                x.Remove(new BriarheartBurger());
+                x.Remove(b);
             });
         }
 
@@ -108,22 +112,20 @@ namespace BleakwindBuffet.DataTests.UnitTests
         public void ChangingItemPriceRaisesPropertyChanged()
         {
             Order x = new Order();
-            x.Add(new AretinoAppleJuice());
+            AretinoAppleJuice a = new AretinoAppleJuice();
+            x.Add(a);
             Assert.PropertyChanged(x, "Subtotal", () =>
             {
-                AretinoAppleJuice b = x[1] as AretinoAppleJuice;
-                b.Size = Size.Large;
+                a.Size = Size.Large;
             });
 
             Assert.PropertyChanged(x, "Tax", () =>
             {
-                AretinoAppleJuice b = x[1] as AretinoAppleJuice;
-                b.Size = Size.Large;
+                a.Size = Size.Medium;
             });
             Assert.PropertyChanged(x, "Total", () =>
             {
-                AretinoAppleJuice b = x[1] as AretinoAppleJuice;
-                b.Size = Size.Large;
+                a.Size = Size.Small;
             });
 
         }
@@ -132,22 +134,11 @@ namespace BleakwindBuffet.DataTests.UnitTests
         public void ChangingItemCaloriesRaisesPropertyChanged()
         {
             Order x = new Order();
-            x.Add(new AretinoAppleJuice());
-            Assert.PropertyChanged(x, "Subtotal", () =>
+            AretinoAppleJuice a = new AretinoAppleJuice();
+            x.Add(a);
+            Assert.PropertyChanged(x, "Calories", () =>
             {
-                AretinoAppleJuice b = x[1] as AretinoAppleJuice;
-                b.Size = Size.Large;
-            });
-
-            Assert.PropertyChanged(x, "Tax", () =>
-            {
-                AretinoAppleJuice b = x[1] as AretinoAppleJuice;
-                b.Size = Size.Large;
-            });
-            Assert.PropertyChanged(x, "Total", () =>
-            {
-                AretinoAppleJuice b = x[1] as AretinoAppleJuice;
-                b.Size = Size.Large;
+                a.Size = Size.Large;
             });
 
         }

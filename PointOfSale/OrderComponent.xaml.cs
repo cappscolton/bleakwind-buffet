@@ -28,6 +28,11 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderComponent : UserControl
     {
+        /// <summary>
+        /// Constructor for this UserControl.
+        /// Creates a new Order which can be treated as a List for
+        /// displaying it's contents dynamically within a ListView.
+        /// </summary>
        public OrderComponent()
         {
             InitializeComponent();
@@ -36,6 +41,11 @@ namespace PointOfSale
             OrderListView.SelectionChanged += OrderListView_SelectionChanged;
         }
 
+        /// <summary>
+        /// Buttonclick event for removing the SelectedItem from the Order.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void removeItem(object sender, RoutedEventArgs e)
         {
             Order o = DataContext as Order;
@@ -43,11 +53,22 @@ namespace PointOfSale
             changePrimaryMenu("Selection");
         }
 
+        /// <summary>
+        /// Listener event. When a new item in the selection changes, the main window should feature
+        /// that item's customization controls.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OrderListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EditCustomization(OrderListView.SelectedItem as IOrderItem);
         }
 
+        /// <summary>
+        /// Turn the main window into the appropriate customization window.
+        /// This means the DataContext of that customizer must be set to an existing IOrderItem.
+        /// </summary>
+        /// <param name="item"></param>
         public void EditCustomization(IOrderItem item)
         {
             if (item == null) return;
