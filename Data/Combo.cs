@@ -18,6 +18,16 @@ namespace BleakwindBuffet.Data
     /// </summary>
     public class Combo : IOrderItem, INotifyPropertyChanged
     {
+        public Combo()
+        {
+
+        }
+        public Combo(IOrderItem e, IOrderItem d, IOrderItem s)
+        {
+            Entree = e;
+            Drink = d;
+            Side = s;
+        }
         /// <summary>
         /// Allows us to get notifications when the details of this object have changed so that
         /// the properties can be updated, because the UI that uses this class depends on the value of the properties.
@@ -129,9 +139,14 @@ namespace BleakwindBuffet.Data
                 ret.Add(side.ToString());
                 ret = ret.Concat(side.SpecialInstructions).ToList();
                 ret.Add(drink.ToString());
-                ret = ret.Concat(side.SpecialInstructions).ToList();
+                ret = ret.Concat(drink.SpecialInstructions).ToList();
                 return ret;
             }
+        }
+
+        public override string ToString()
+        {
+            return "Combo";
         }
 
         /// <summary>
@@ -142,10 +157,13 @@ namespace BleakwindBuffet.Data
         /// <param name="e"></param>
         void PropertyChangeListener(object sender, PropertyChangedEventArgs e)
         {
+            if (e.PropertyName == "Size")
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
             if (e.PropertyName == "Price")
             {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                
             }
             else if (e.PropertyName == "Calories")
             {

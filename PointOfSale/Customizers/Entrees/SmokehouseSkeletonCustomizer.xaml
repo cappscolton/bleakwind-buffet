@@ -13,10 +13,12 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Customize Thalmor Triple</TextBlock>
+        <Viewbox StretchDirection="DownOnly" Stretch="Uniform">
+            <TextBlock FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Customize Thalmor Triple</TextBlock>
+        </Viewbox>
 
         <CheckBox IsChecked="{Binding Path=HashBrowns}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1">
             <CheckBox.LayoutTransform>
@@ -52,7 +54,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button FontSize="26" Content="Cancel" Click="cancelCustomizing" Grid.Column="1" Grid.Row="9"/>
-            <Button FontSize="26" Content="Done" Click="finishCustomizing" Grid.Row="9"/>
+            <Button Name="DoneButton" FontSize="26" Content="Done" Click="finishCustomizing" Grid.Row="9"/>
         </Grid>
 
 

@@ -7,28 +7,23 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontFamily="Georgia" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center">Add to Order</TextBlock>
+        <TextBlock Name="Header" FontFamily="Georgia" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center">Add to Order</TextBlock>
 
         <Grid Name="ButtonGrid" Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="10*"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -37,26 +32,66 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column ="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25" FontFamily="Georgia">Entrees</TextBlock>
-            <TextBlock Grid.Row ="4" Grid.Column ="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"  FontSize="25" FontFamily="Georgia">Sides</TextBlock>
-            <TextBlock Grid.Row ="7" Grid.Column ="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"  FontSize="25" FontFamily="Georgia">Drinks</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column ="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25" FontFamily="Georgia">Entrees</TextBlock>
+            <TextBlock Grid.Row ="3" Grid.Column ="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"  FontSize="25" FontFamily="Georgia">Sides</TextBlock>
+            <TextBlock Grid.Row ="5" Grid.Column ="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"  FontSize="25" FontFamily="Georgia">Drinks</TextBlock>
 
-            <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Briarheart Burger" Grid.Row="1" Grid.Column="0"/>
-            <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Double Draugr" Grid.Row="1" Grid.Column="1"/>
-            <Button Margin="1,0,2,0" Click="enterCustomizationMenu" Content="Garden Orc Omelette" Grid.Row="1" Grid.Column="2"/>
-            <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Philly Poacher" Grid.Row="2" Grid.Column="0"/>
-            <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Smokehouse Skeleton" Grid.Row="2" Grid.Column="1"/>
-            <Button Margin="1,1,2,0" Click="enterCustomizationMenu" Content="Thalmor Triple" Grid.Row="2" Grid.Column="2"/>
-            <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Thugs T-Bone" Grid.Row="3" Grid.Column="0"/>
-            <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Dragonborn Waffle Fries" Grid.Row="5" Grid.Column="0"/>
-            <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Fried Miraak" Grid.Row="5" Grid.Column="1"/>
-            <Button Margin="1,0,2,0" Click="enterCustomizationMenu" Content="Mad Otar Grits" Grid.Row="5" Grid.Column="2"/>
-            <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Vokun Salad" Grid.Row="6" Grid.Column="0"/>
-            <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Aretino Apple Juice" Grid.Row="8" Grid.Column="0"/>
-            <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Candlehearth Coffee" Grid.Row="8" Grid.Column="1"/>
-            <Button Margin="1,0,2,0" Click="enterCustomizationMenu" Content="Markarth Milk" Grid.Row="8" Grid.Column="2"/>
-            <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Sailor Soda" Grid.Row="9" Grid.Column="0"/>
-            <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Warrior Water" Grid.Row="9" Grid.Column="1"/>
+            <Button Grid.Row="0" Grid.Column="0" FontWeight="Bold" Click="enterCustomizationMenu">Create A Combo</Button>
+            
+            <Grid Name="EntreeGrid" Grid.Row="2" Grid.ColumnSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Briarheart Burger" Grid.Row="0" Grid.Column="0"/>
+                <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Double Draugr" Grid.Row="0" Grid.Column="1"/>
+                <Button Margin="1,0,2,0" Click="enterCustomizationMenu" Content="Garden Orc Omelette" Grid.Row="0" Grid.Column="2"/>
+                <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Philly Poacher" Grid.Row="1" Grid.Column="0"/>
+                <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Smokehouse Skeleton" Grid.Row="1" Grid.Column="1"/>
+                <Button Margin="1,1,2,0" Click="enterCustomizationMenu" Content="Thalmor Triple" Grid.Row="1" Grid.Column="2"/>
+                <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Thugs T-Bone" Grid.Row="2" Grid.Column="0"/>
+            </Grid>
+
+            <Grid Name="SideGrid" Grid.Row="4" Grid.ColumnSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Dragonborn Waffle Fries" Grid.Row="0" Grid.Column="0"/>
+                <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Fried Miraak" Grid.Row="0" Grid.Column="1"/>
+                <Button Margin="1,0,2,0" Click="enterCustomizationMenu" Content="Mad Otar Grits" Grid.Row="0" Grid.Column="2"/>
+                <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Vokun Salad" Grid.Row="1" Grid.Column="0"/>
+            </Grid>
+
+            <Grid Name="DrinkGrid" Grid.Row="6" Grid.ColumnSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Aretino Apple Juice" Grid.Row="0" Grid.Column="0"/>
+                <Button Margin="1,0,0,0" Click="enterCustomizationMenu" Content="Candlehearth Coffee" Grid.Row="0" Grid.Column="1"/>
+                <Button Margin="1,0,2,0" Click="enterCustomizationMenu" Content="Markarth Milk" Grid.Row="0" Grid.Column="2"/>
+                <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Sailor Soda" Grid.Row="1" Grid.Column="0"/>
+                <Button Margin="1,1,0,0" Click="enterCustomizationMenu" Content="Warrior Water" Grid.Row="1" Grid.Column="1"/>
+            </Grid>
+
+            
 
         </Grid>
     </Grid>

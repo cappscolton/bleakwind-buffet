@@ -10,7 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
         <TextBlock FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Customize Side</TextBlock>

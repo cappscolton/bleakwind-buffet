@@ -13,10 +13,12 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Customize Garden Orc Omelette</TextBlock>
+        <Viewbox StretchDirection="DownOnly" Stretch="Uniform">
+            <TextBlock FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Customize Garden Orc Omelette</TextBlock>
+        </Viewbox>
 
         <!-- Checkbox bound to bool on datacontext menu item  -->
         <CheckBox IsChecked="{Binding Path=Broccoli}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1">
@@ -56,7 +58,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button FontSize="26" Content="Cancel" Click="cancelCustomizing" Grid.Column="1" Grid.Row="9"/>
-            <Button FontSize="26" Content="Done" Click="finishCustomizing" Grid.Row="9"/>
+            <Button Name="DoneButton" FontSize="26" Content="Done" Click="finishCustomizing" Grid.Row="9"/>
         </Grid>
 
 
