@@ -270,7 +270,7 @@ namespace PointOfSale
 
         }
 
-        void cancelOrder(object sender, RoutedEventArgs e)
+        public void cancelOrder(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;
             DataContext = new Order();

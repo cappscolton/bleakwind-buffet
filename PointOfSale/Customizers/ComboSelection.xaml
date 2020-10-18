@@ -36,7 +36,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button>Cancel</Button>
+            <Button Click="cancelCustomizing">Cancel</Button>
             <Button Click="customizeComboItems" Grid.Column="1">Customize Items</Button>
         </Grid>
         
