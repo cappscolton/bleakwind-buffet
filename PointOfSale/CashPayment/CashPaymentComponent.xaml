@@ -6,22 +6,75 @@
              xmlns:local="clr-namespace:PointOfSale"
              xmlns:cashPayment="clr-namespace:PointOfSale.CashPayment"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid x:Name="DrawerGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <cashPayment:CurrencyControl Grid.Row="0"/>
-        <cashPayment:CurrencyControl Grid.Row="1"/>
-        <cashPayment:CurrencyControl Grid.Row="2"/>
-        <cashPayment:CurrencyControl Grid.Row="3"/>
-        <cashPayment:CurrencyControl Grid.Row="4"/>
-        <cashPayment:CurrencyControl Grid.Row="5"/>
+
+
+        
+        <Grid Margin="1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border Margin="1" BorderBrush="Red" BorderThickness="2">
+                <TextBlock>From Customer</TextBlock>
+            </Border>
+            <Border Margin="1" Grid.Column="1" BorderBrush="Green" BorderThickness="2">
+                <TextBlock>Give Change As</TextBlock>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock TextWrapping="WrapWithOverflow" Text="Total Sale"/>
+            <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1">
+                <TextBlock  Text="{Binding Path=Total, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CashPaymentComponent}, StringFormat={}{0:C2}}"/>
+            </Border>
+
+
+            <StackPanel Grid.Column="2" Orientation="Vertical">
+                <TextBlock   TextWrapping="WrapWithOverflow" Text="Amount Due"/>
+            </StackPanel>
+            
+            <StackPanel  Grid.Column="4" Orientation="Vertical">
+                <TextBlock TextWrapping="WrapWithOverflow"  Text="Change Owed"/>
+            </StackPanel>
+            
+            <TextBlock Grid.Column="3" Background="Red" Text="{Binding Path=AmountDue, StringFormat={}{0:C2}}"/>
+            
+            <TextBlock Grid.Column="5" Background="Green" Text="{Binding Path=ReceiptChangeOwed, StringFormat={}{0:C2}}"/>
+            <Button Grid.Column="6" Click="finalizeSale">
+                <TextBlock TextWrapping="WrapWithOverflow" Text="Finalize Sale"/>
+            </Button>
+            <Button Grid.Column="7" Click="returnToOrder">
+                <TextBlock FontSize="15" TextWrapping="WrapWithOverflow" Text="Return To Order"/>
+            </Button>
+
+        </Grid>
+
+        <StackPanel Margin="1" Grid.Row="1" x:Name="Bills" Orientation="Vertical"/>
+        <StackPanel Margin="1" Grid.Row="1" x:Name="Coins" Grid.Column="1" Orientation="Vertical"/>
+
+
 
     </Grid>
 </UserControl>

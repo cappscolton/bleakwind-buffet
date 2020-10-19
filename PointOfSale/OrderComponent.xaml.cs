@@ -270,6 +270,11 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// Returns to menu selection screen and creates new DataContext Order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void cancelOrder(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;
@@ -277,6 +282,12 @@ namespace PointOfSale
             OrderListView.ItemsSource = DataContext as Order;
         }
 
+
+        /// <summary>
+        /// Enters Payment mode selection screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void payForOrder(object sender, RoutedEventArgs e)
         {
             PrimaryMenuBorder.Child = new PaymentComponent();

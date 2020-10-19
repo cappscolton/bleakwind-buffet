@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale.CashPayment"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Height="75">
+             d:DesignHeight="450" d:DesignWidth="300">
+    <Grid Height="50">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -23,19 +23,18 @@
          </Viewbox>
 
 
-        <Button Grid.Column="1">
+        <Button x:Name="IncreaseCustomerQuantity" Grid.Column="1">
             <Viewbox Stretch="Uniform">
                 <TextBlock Text="+"/>
             </Viewbox>
         </Button>
         
         
-        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2">
-            <TextBlock FontSize="70" HorizontalAlignment="Center"
-                       Text="{Binding Path=CustomerQuantity, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CurrencyControl}}"/>
+        <Border BorderBrush="Red" BorderThickness="1" Grid.Column="2">
+            <TextBlock Text="{Binding Path=CustomerQuantity, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CurrencyControl}}"  FontSize="50" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         </Border>
 
-        <Button Grid.Column="3">
+        <Button x:Name="DecreaseCustomerQuantity" Grid.Column="3">
             <Viewbox Stretch="Uniform">
                 <TextBlock Text="-"/>
             </Viewbox>

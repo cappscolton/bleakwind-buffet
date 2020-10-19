@@ -82,7 +82,7 @@ namespace PointOfSale
         public void PayWithCash(object sender, RoutedEventArgs e)
         {
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
-            w.PrimaryMenuBorder.Child = new CashPaymentComponent();
+            w.PrimaryMenuBorder.Child = new CashPaymentComponent((DataContext as Order).Total);
         }
     }
 }
