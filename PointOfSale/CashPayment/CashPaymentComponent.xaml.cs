@@ -100,6 +100,22 @@ namespace PointOfSale
         }
 
         /// <summary>
+        /// Calls recipetPrinter.PrintLine but cuts the line every 40 characters.
+        /// </summary>
+        /// <param name="s"></param>
+        void printLine(string s)
+        {
+            if (s.Length < 40) {
+                RecieptPrinter.PrintLine(s);
+            }
+            else
+            {
+                RecieptPrinter.PrintLine(s.Substring(0, 40));
+                RecieptPrinter.PrintLine(s.Substring(39, 40));
+            }
+        }
+
+        /// <summary>
         /// Finalizes the sale and prints a receipt.txt
         /// Bound to a button
         /// </summary>
@@ -107,26 +123,30 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void finalizeSale(object sender, RoutedEventArgs e)
         {
+            if ((DataContext as CashPaymentIntermediary).AmountDue > 0.00) {
+                MessageBox.Show("The customer has not provided enough cash.");
+                return;
+            }
             OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
             Order o = (w.DataContext as Order);
 
-            RecieptPrinter.PrintLine($"Order Number {o.Number + 1}");
-            RecieptPrinter.PrintLine($"{DateTime.Now}");
-            RecieptPrinter.PrintLine($"Order Details:");
+            printLine($"Order Number {o.Number + 1}");
+            printLine($"{DateTime.Now}");
+            printLine($"Order Details:");
             foreach (IOrderItem i in o)
             {
-                RecieptPrinter.PrintLine($"{i.Name}     {i.Price:C2}");
+                printLine($"{i.Name}     {i.Price:C2}");
                 foreach (string s in i.SpecialInstructions)
                 {
-                    RecieptPrinter.PrintLine($"     -{s}");
+                     printLine($"     -{s}");
                 }
 
             }
-            RecieptPrinter.PrintLine($"Subtotal: {o.Subtotal:C2}");
-            RecieptPrinter.PrintLine($"Tax: {o.Tax:C2}");
-            RecieptPrinter.PrintLine($"total: {o.Total:C2}");
-            RecieptPrinter.PrintLine($"Payment Method: Cash");
-            RecieptPrinter.PrintLine($"Change Owed: {(DataContext as CashPaymentIntermediary).ReceiptChangeOwed:C2}");
+            printLine($"Subtotal: {o.Subtotal:C2}");
+            printLine($"Tax: {o.Tax:C2}");
+            printLine($"total: {o.Total:C2}");
+            printLine($"Payment Method: Cash");
+            printLine($"Change Owed: {(DataContext as CashPaymentIntermediary).ReceiptChangeOwed:C2}");
             RecieptPrinter.CutTape();
 
             w.cancelOrder(sender, e);

@@ -25,6 +25,23 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Calls recipetPrinter.PrintLine but cuts the line every 40 characters.
+        /// </summary>
+        /// <param name="s"></param>
+        void printLine(string s)
+        {
+            if (s.Length < 40)
+            {
+                RecieptPrinter.PrintLine(s);
+            }
+            else
+            {
+                RecieptPrinter.PrintLine(s.Substring(0, 40));
+                RecieptPrinter.PrintLine(s.Substring(39, 40));
+            }
+        }
+
         public void PayWithCard(object sender, RoutedEventArgs e)
         {
             Order o = DataContext as Order;
@@ -32,23 +49,23 @@ namespace PointOfSale
             {
                 case (CardTransactionResult.Approved):
                     {
-                        RecieptPrinter.PrintLine($"Order Number {o.Number + 1}");
-                        RecieptPrinter.PrintLine($"{DateTime.Now}");
-                        RecieptPrinter.PrintLine($"Order Details:");
+                        printLine($"Order Number {o.Number + 1}");
+                        printLine($"{DateTime.Now}");
+                        printLine($"Order Details:");
                         foreach (IOrderItem i in o)
                         {
-                            RecieptPrinter.PrintLine($"{i.Name}     {i.Price:C2}");
+                            printLine($"{i.Name}     {i.Price:C2}");
                             foreach (string s in i.SpecialInstructions)
                             {
-                                RecieptPrinter.PrintLine($"     -{s}");
+                                printLine($"     -{s}");
                             }
 
                         }
-                        RecieptPrinter.PrintLine($"Subtotal: {o.Subtotal:C2}");
-                        RecieptPrinter.PrintLine($"Tax: {o.Tax:C2}");
-                        RecieptPrinter.PrintLine($"total: {o.Total:C2}");
-                        RecieptPrinter.PrintLine($"Payment Method: Card");
-                        RecieptPrinter.PrintLine($"Change Owed: $0.00");
+                        printLine($"Subtotal: {o.Subtotal:C2}");
+                        printLine($"Tax: {o.Tax:C2}");
+                        printLine($"total: {o.Total:C2}");
+                        printLine($"Payment Method: Card");
+                        printLine($"Change Owed: $0.00");
                         RecieptPrinter.CutTape();
                         OrderComponent w = Window.GetWindow(this).Content as OrderComponent;
                         w.cancelOrder(sender, e);
