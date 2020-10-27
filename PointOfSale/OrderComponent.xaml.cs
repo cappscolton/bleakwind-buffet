@@ -280,6 +280,7 @@ namespace PointOfSale
             Button b = sender as Button;
             DataContext = new Order();
             OrderListView.ItemsSource = DataContext as Order;
+            changePrimaryMenu("Selection");
         }
 
 
