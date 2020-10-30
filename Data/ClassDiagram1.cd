@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="BleakwindBuffet.Data.Drinks.AretinoAppleJuice">
+    <Position X="1.75" Y="11.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IABAAAAAAQAAgAAEAAAAAEAAgAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Drinks\AretinoAppleJuice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Drinks.CandlehearthCoffee">
+    <Position X="10.25" Y="11.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>JADAAAQAAQAAgAAEAAAIAEAAgAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Drinks\CandlehearthCoffee.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Drinks.Drink" Collapsed="true">
+    <Position X="11.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQAAgAAAAIAAAEQAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Drinks\Drink.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Drinks.MarkarthMilk">
+    <Position X="14.5" Y="11.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IABAAAAAAQAAgAAEAAAAAEAAgAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Drinks\MarkarthMilk.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Drinks.SailorSoda">
+    <Position X="18.75" Y="11.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IABIAAAACQAAgAAEAAAAAEAAgAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Drinks\SailorSoda.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Drinks.WarriorWater">
+    <Position X="6" Y="11.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IABAAAAAAQAAgAAEAAAAAEAAgAAAAAAAAAAQAAAAUAA=</HashCode>
+      <FileName>Drinks\WarriorWater.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Entrees.BriarheartBurger">
+    <Position X="6.5" Y="3.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IAIAAAAiAQCkIAAEpAAAAEAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entrees\BriarheartBurger.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Entrees.DoubleDraugr">
+    <Position X="15" Y="3.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IAIAAAAiAQCkIAAEpAAAAEAAgAAAAAAEAgAADAIAAAg=</HashCode>
+      <FileName>Entrees\DoubleDraugr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Entrees.Entree">
+    <Position X="15" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQAAAAAAAAAAAEQAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entrees\Entree.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Entrees.GardenOrcOmelette">
+    <Position X="27.75" Y="3.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQYAAAAGAAAAAEAAgAAAAAAEAAAAJAAAACA=</HashCode>
+      <FileName>Entrees\GardenOrcOmelette.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Entrees.PhillyPoacher">
+    <Position X="2.25" Y="3.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQAAAAAEACAAQEAggEAAAAAgAAAAIAAAAAA=</HashCode>
+      <FileName>Entrees\PhillyPoacher.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Entrees.SmokehouseSkeleton">
+    <Position X="10.75" Y="3.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IAEAAAAAAQAAFAQEABQAAkAAgAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Entrees\SmokehouseSkeleton.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Entrees.ThalmorTriple">
+    <Position X="19.25" Y="3.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IAIAAAAiAQCkJAAEpAQAAEAAgABAAAAEQgAADAIAAAg=</HashCode>
+      <FileName>Entrees\ThalmorTriple.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Entrees.ThugsTBone">
+    <Position X="23.5" Y="3.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQAAAAAEAAAAAEAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entrees\ThugsTBone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Sides.DragonbornWaffleFries">
+    <Position X="6" Y="19.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQAAgAAEAAAAAEAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sides\DragonbornWaffleFries.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Sides.FriedMiraak">
+    <Position X="10.25" Y="19.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQAAgAAEAAAAAEAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sides\FriedMiraak.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Sides.MadOtarGrits">
+    <Position X="14.5" Y="19.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQAAgAAEAAAAAEAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sides\MadOtarGrits.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Sides.Side">
+    <Position X="8" Y="16.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQAAgAAAAAAAAEQAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sides\Side.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Sides.VokunSalad">
+    <Position X="1.75" Y="19.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQAAgAAEAAAAAEAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sides\VokunSalad.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Combo" BaseTypeListCollapsed="true">
+    <Position X="24.5" Y="14" Width="5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQgAgAANAIAAAUQAgAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Combo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Menu">
+    <Position X="28.5" Y="10.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAQAgAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BleakwindBuffet.Data.Order" BaseTypeListCollapsed="true">
+    <Position X="30" Y="14" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAgAAABAkAAAAAEAAAAAAAAAAQAAAQAAABAAAAAA=</HashCode>
+      <FileName>Order.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="BleakwindBuffet.Data.IOrderItem">
+    <Position X="24.5" Y="10.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQAAAAAAAAAAAEQAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IOrderItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="BleakwindBuffet.Data.Enums.Size">
+    <Position X="24.5" Y="19.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Enums\Size.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BleakwindBuffet.Data.Enums.SodaFlavor">
+    <Position X="27" Y="19.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAEAAAAAAAAAAAQAAAAAAAABAAAIAAAAAEAA=</HashCode>
+      <FileName>Enums\SodaFlavor.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

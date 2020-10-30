@@ -25,33 +25,36 @@ namespace BleakwindBuffet.DataTests.UnitTests
                             item => Assert.IsAssignableFrom<ThugsTBone>(item),
 
                             item => Assert.IsAssignableFrom<DragonbornWaffleFries>(item),
-                            item => Assert.IsAssignableFrom<FriedMiraak>(item),
-                            item => Assert.IsAssignableFrom<MadOtarGrits>(item),
-                            item => Assert.IsAssignableFrom<VokunSalad>(item),
-
                             item => Assert.IsAssignableFrom<DragonbornWaffleFries>(item),
-                            item => Assert.IsAssignableFrom<FriedMiraak>(item),
-                            item => Assert.IsAssignableFrom<MadOtarGrits>(item),
-                            item => Assert.IsAssignableFrom<VokunSalad>(item),
-
                             item => Assert.IsAssignableFrom<DragonbornWaffleFries>(item),
+
                             item => Assert.IsAssignableFrom<FriedMiraak>(item),
+                            item => Assert.IsAssignableFrom<FriedMiraak>(item),
+                            item => Assert.IsAssignableFrom<FriedMiraak>(item),
+
                             item => Assert.IsAssignableFrom<MadOtarGrits>(item),
+                            item => Assert.IsAssignableFrom<MadOtarGrits>(item),
+                            item => Assert.IsAssignableFrom<MadOtarGrits>(item),
+
+                            item => Assert.IsAssignableFrom<VokunSalad>(item),
+                            item => Assert.IsAssignableFrom<VokunSalad>(item),
                             item => Assert.IsAssignableFrom<VokunSalad>(item),
 
-                            item => Assert.IsAssignableFrom<AretinoAppleJuice>(item),
-                            item => Assert.IsAssignableFrom<CandlehearthCoffee>(item),
-                            item => Assert.IsAssignableFrom<MarkarthMilk>(item),
-                            item => Assert.IsAssignableFrom<WarriorWater>(item),
 
                             item => Assert.IsAssignableFrom<AretinoAppleJuice>(item),
-                            item => Assert.IsAssignableFrom<CandlehearthCoffee>(item),
-                            item => Assert.IsAssignableFrom<MarkarthMilk>(item),
-                            item => Assert.IsAssignableFrom<WarriorWater>(item),
-
                             item => Assert.IsAssignableFrom<AretinoAppleJuice>(item),
+                            item => Assert.IsAssignableFrom<AretinoAppleJuice>(item),
+
                             item => Assert.IsAssignableFrom<CandlehearthCoffee>(item),
+                            item => Assert.IsAssignableFrom<CandlehearthCoffee>(item),
+                            item => Assert.IsAssignableFrom<CandlehearthCoffee>(item),
+
                             item => Assert.IsAssignableFrom<MarkarthMilk>(item),
+                            item => Assert.IsAssignableFrom<MarkarthMilk>(item),
+                            item => Assert.IsAssignableFrom<MarkarthMilk>(item),
+
+                            item => Assert.IsAssignableFrom<WarriorWater>(item),
+                            item => Assert.IsAssignableFrom<WarriorWater>(item),
                             item => Assert.IsAssignableFrom<WarriorWater>(item),
 
 
@@ -95,33 +98,35 @@ namespace BleakwindBuffet.DataTests.UnitTests
                             item => Assert.IsAssignableFrom<ThugsTBone>(item),
 
                             item => Assert.Equal("Small Dragonborn Waffle Fries", item.ToString()),
-                            item => Assert.Equal("Small Fried Miraak", item.ToString()),
-                            item => Assert.Equal("Small Mad Otar Grits", item.ToString()),
-                            item => Assert.Equal("Small Vokun Salad", item.ToString()),
-
                             item => Assert.Equal("Medium Dragonborn Waffle Fries", item.ToString()),
-                            item => Assert.Equal("Medium Fried Miraak", item.ToString()),
-                            item => Assert.Equal("Medium Mad Otar Grits", item.ToString()),
-                            item => Assert.Equal("Medium Vokun Salad", item.ToString()),
-
                             item => Assert.Equal("Large Dragonborn Waffle Fries", item.ToString()),
+
+                            item => Assert.Equal("Small Fried Miraak", item.ToString()),
+                            item => Assert.Equal("Medium Fried Miraak", item.ToString()),
                             item => Assert.Equal("Large Fried Miraak", item.ToString()),
+
+                            item => Assert.Equal("Small Mad Otar Grits", item.ToString()),
+                            item => Assert.Equal("Medium Mad Otar Grits", item.ToString()),
                             item => Assert.Equal("Large Mad Otar Grits", item.ToString()),
+
+                            item => Assert.Equal("Small Vokun Salad", item.ToString()),
+                            item => Assert.Equal("Medium Vokun Salad", item.ToString()),
                             item => Assert.Equal("Large Vokun Salad", item.ToString()),
 
                             item => Assert.Equal("Small Aretino Apple Juice", item.ToString()),
-                            item => Assert.Equal("Small Candlehearth Coffee", item.ToString()),
-                            item => Assert.Equal("Small Markarth Milk", item.ToString()),
-                            item => Assert.Equal("Small Warrior Water", item.ToString()),
-
                             item => Assert.Equal("Medium Aretino Apple Juice", item.ToString()),
-                            item => Assert.Equal("Medium Candlehearth Coffee", item.ToString()),
-                            item => Assert.Equal("Medium Markarth Milk", item.ToString()),
-                            item => Assert.Equal("Medium Warrior Water", item.ToString()),
-
                             item => Assert.Equal("Large Aretino Apple Juice", item.ToString()),
+
+                            item => Assert.Equal("Small Candlehearth Coffee", item.ToString()),
+                            item => Assert.Equal("Medium Candlehearth Coffee", item.ToString()),
                             item => Assert.Equal("Large Candlehearth Coffee", item.ToString()),
+
+                            item => Assert.Equal("Small Markarth Milk", item.ToString()),
+                            item => Assert.Equal("Medium Markarth Milk", item.ToString()),
                             item => Assert.Equal("Large Markarth Milk", item.ToString()),
+
+                            item => Assert.Equal("Small Warrior Water", item.ToString()),
+                            item => Assert.Equal("Medium Warrior Water", item.ToString()),
                             item => Assert.Equal("Large Warrior Water", item.ToString()),
 
                             item => Assert.Equal("Small Blackberry Sailor Soda", item.ToString()),

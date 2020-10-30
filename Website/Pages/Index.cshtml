@@ -9,13 +9,60 @@
     <p>We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.</p>
 </div>
 
-<h2>Entrees</h2>
+<div>
 
-<div class="menu-item">
-    <p></p>
+    <h2>Entrees</h2>
+    <ul class="menu">
+        @foreach (BleakwindBuffet.Data.Entrees.Entree d in BleakwindBuffet.Data.Menu.Entrees())
+        {
+            <li>
+                <div class="menu-item">
+                    <div>@d.Name</div>
+                    <div class="menu-item-detail">Price: $@d.Price</div>
+                    <div class="menu-item-detail">Calories: @d.Calories</div>
+                </div>
+            </li>
+        }
+    </ul>
+
+    <h2>Sides</h2>
+    <ul class="menu">
+        @foreach (BleakwindBuffet.Data.Sides.Side d in BleakwindBuffet.Data.Menu.Sides())
+        {
+            <li>
+                <div class="menu-item">
+                    <div>@d.Name</div>
+                    <div class="menu-item-detail">Price: $@d.Price</div>
+                    <div class="menu-item-detail">Calories: @d.Calories</div>
+                </div>
+            </li>
+        }
+    </ul>
+
+    <h2>Drinks</h2>
+    <ul class="menu">
+        @foreach (BleakwindBuffet.Data.Drinks.Drink d in BleakwindBuffet.Data.Menu.Drinks())
+        {
+            <li>
+                <div class="menu-item">
+                    <div>@d.Name</div>
+                    <div class="menu-item-detail">Price: $@d.Price</div>
+                    <div class="menu-item-detail">Calories: @d.Calories</div>
+                </div>
+            </li>
+        }
+    </ul>
 </div>
 
+<div>
+    <h2>Sailor Soda Flavors</h2>
+    <div>Cherry</div>
+    <div>Blackberry</div>
+    <div>Grapefruit</div>
+    <div>Lemon</div>
+    <div>Peach</div>
+    <div>Watermelon</div>
 
-<h2>Sides</h2>
-
-<h2>Drinks</h2>
+    <h2>Combos</h2>
+    <div>Combine any entree, side, and drink and get a $1 discount on your order.</div>
+</div>

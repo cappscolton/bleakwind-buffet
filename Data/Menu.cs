@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Security.Cryptography.X509Certificates;
 
 namespace BleakwindBuffet.Data
 {
@@ -38,23 +39,24 @@ namespace BleakwindBuffet.Data
         public static IEnumerable<IOrderItem> Sides()
         {
             List<IOrderItem> list = new List<IOrderItem>();
-            foreach (Size s in Enum.GetValues(typeof(Size)))
+            Array x = Enum.GetValues(typeof(Size));
+            foreach (Size s in x)
             {
-                DragonbornWaffleFries d = new DragonbornWaffleFries();
-                FriedMiraak f = new FriedMiraak();
-                MadOtarGrits m = new MadOtarGrits();
-                VokunSalad v = new VokunSalad();
-                d.Size = s;
-                f.Size = s;
-                m.Size = s;
-                v.Size = s;
-
-                list.Add(d);
-                list.Add(f);
-                list.Add(m);
-                list.Add(v);
+                list.Add(new DragonbornWaffleFries() { Size = s });
             }
-            
+            foreach (Size s in x)
+            {
+                list.Add(new FriedMiraak() { Size = s });
+            }
+            foreach (Size s in x)
+            {
+                list.Add(new MadOtarGrits() { Size = s });
+            }
+            foreach (Size s in x)
+            {
+                list.Add(new VokunSalad() { Size = s });
+            }
+
             return list;
         }
         /// <summary>
@@ -64,21 +66,24 @@ namespace BleakwindBuffet.Data
         public static IEnumerable<IOrderItem> Drinks()
         {
             List<IOrderItem> list = new List<IOrderItem>();
-            foreach (Size s in Enum.GetValues(typeof(Size)))
+            Array x = Enum.GetValues(typeof(Size));
+            foreach (Size s in x)
             {
-                AretinoAppleJuice aj = new AretinoAppleJuice();
-                CandlehearthCoffee cc = new CandlehearthCoffee();
-                MarkarthMilk mm = new MarkarthMilk();
-                WarriorWater ww = new WarriorWater();
-                aj.Size = s;
-                cc.Size = s;
-                mm.Size = s;
-                ww.Size = s;
-                list.Add(aj);
-                list.Add(cc);
-                list.Add(mm);
-                list.Add(ww);
+                list.Add(new AretinoAppleJuice() { Size = s });
             }
+            foreach (Size s in x)
+            {
+                list.Add(new CandlehearthCoffee() { Size = s });
+            }
+            foreach (Size s in x)
+            {
+                list.Add(new MarkarthMilk() { Size = s });
+            }
+            foreach (Size s in x)
+            {
+                list.Add(new WarriorWater() { Size = s });
+            }
+            
             foreach (SodaFlavor f in Enum.GetValues(typeof(SodaFlavor))) 
             {
                 foreach (Size s in Enum.GetValues(typeof(Size)))

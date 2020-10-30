@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="PointOfSale.CashPaymentComponent" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="6.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAgAAAABABIAAEAIAIAAAACAAASAABBIIAIAABAAA=</HashCode>
+      <FileName>CashPayment\CashPaymentComponent.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.AretinoAppleJuiceCustomizer">
+    <Position X="15.25" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customizers\Drinks\AretinoAppleJuiceCustomizer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.CandlehearthCoffeeCustomizer">
+    <Position X="24.5" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customizers\Drinks\CandlehearthCoffeeCustomizer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.MarkarthMilkCustomizer">
+    <Position X="36.25" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customizers\Drinks\MarkarthMilkCustomizer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.SailorSodaCustomizer">
+    <Position X="47.25" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customizers\Drinks\SailorSodaCustomizer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.WarriorWaterCustomizer">
+    <Position X="4.75" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customizers\Drinks\WarriorWaterCustomizer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.BriarheartBurgerCustomizer">
+    <Position X="18.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customizers\Entrees\BriarheartBurgerCustomizer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.DoubleDraugerCustomizer">
+    <Position X="27.75" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customizers\Entrees\DoubleDraugerCustomizer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.GardenOrcOmeletteCustomizer">
+    <Position X="39" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customizers\Entrees\GardenOrcOmeletteCustomizer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.PhillyPoacherCustomizer">
+    <Position X="50.5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customizers\Entrees\PhillyPoacherCustomizer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.SmokehouseSkeletonCustomizer">
+    <Position X="7.5" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customizers\Entrees\SmokehouseSkeletonCustomizer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.ThalmorTripleCustomizer">
+    <Position X="21.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customizers\Entrees\ThalmorTripleCustomizer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.ComboCustomizer">
+    <Position X="30.75" Y="3.25" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customizers\ComboCustomizer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.ComboSelection">
+    <Position X="42.25" Y="3.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAgAAJAIAAAQAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customizers\ComboSelection.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.SideCustomizer">
+    <Position X="53.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customizers\SideCustomizer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.App">
+    <Position X="6.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PointOfSale.Customizer">
+    <Position X="27.75" Y="0.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Customizer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PointOfSale.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.MenuSelectionComponent" BaseTypeListCollapsed="true">
+    <Position X="22.5" Y="6.5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MenuSelectionComponent.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.OrderComponent" BaseTypeListCollapsed="true">
+    <Position X="27.5" Y="6.5" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAEAAAAAAEIAAAAAAAAQAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>OrderComponent.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.PaymentComponent">
+    <Position X="10.75" Y="3.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAQIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PaymentComponent.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.CashPayment.CashPaymentIntermediary" BaseTypeListCollapsed="true">
+    <Position X="16.25" Y="6.25" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>ABAQgQBADCIAABEQEACwgAoAgCAAykBAAIBoAARAAAA=</HashCode>
+      <FileName>CashPayment\CashPaymentIntermediary.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PointOfSale.CashPayment.CurrencyControl" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="6.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAEAAAAAAAAAAAAAAAgAAAAQAAAAEAAAgAAAA=</HashCode>
+      <FileName>CashPayment\CurrencyControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
