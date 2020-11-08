@@ -9,11 +9,54 @@
     <p>We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.</p>
 </div>
 
+<form id="movie-database">
+
+    <div id="search">
+        <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+        <input type="submit" value="Search">
+    </div>
+
+    <label>
+        <input type="checkbox" name="MenuTypes" value="Entrees" checked="@Model.MenuTypes.Contains("Entrees")" />
+        Entrees
+    </label>
+
+    <label>
+        <input type="checkbox" name="MenuTypes" value="Sides" checked="@Model.MenuTypes.Contains("Sides")" />
+        Sides
+    </label>
+
+    <label>
+        <input type="checkbox" name="MenuTypes" value="Drinks" checked="@Model.MenuTypes.Contains("Drinks")" />
+        Drinks
+    </label>
+
+    <h2>Calories</h2>
+    <div>
+        Between
+        <input name="CaloriesMin" type="number" min="0" step="1" />
+        and
+        <input name="CaloriesMax" type="number" min="0" step="1" />
+    </div>
+
+    <h2>Price</h2>
+    <div>
+        Between
+        <input name="PriceMin" type="number" min="0" step="0.01" />
+        and
+        <input name="PriceMax" type="number" min="0" step="0.01" />
+    </div>
+
+</form>
+
+
 <div>
-
-    <h2>Entrees</h2>
+    @if ((@Model.MenuTypes.Contains("Entrees") || Model.MenuTypes.Count() == 0) && Model.Entrees.Count() > 0)
+    {
+        <h2>Entrees</h2>
+    }
     <ul class="menu">
-        @foreach (BleakwindBuffet.Data.Entrees.Entree d in BleakwindBuffet.Data.Menu.Entrees())
+        @foreach (BleakwindBuffet.Data.Entrees.Entree d in @Model.Entrees)
         {
             <li>
                 <div class="menu-item">
@@ -24,10 +67,12 @@
             </li>
         }
     </ul>
-
-    <h2>Sides</h2>
+    @if ((@Model.MenuTypes.Contains("Sides") || Model.MenuTypes.Count() == 0) && Model.Sides.Count() > 0)
+    {
+        <h2>Sides</h2>
+    }
     <ul class="menu">
-        @foreach (BleakwindBuffet.Data.Sides.Side d in BleakwindBuffet.Data.Menu.Sides())
+        @foreach (BleakwindBuffet.Data.Sides.Side d in @Model.Sides)
         {
             <li>
                 <div class="menu-item">
@@ -38,10 +83,12 @@
             </li>
         }
     </ul>
-
-    <h2>Drinks</h2>
+    @if ((@Model.MenuTypes.Contains("Drinks") || Model.MenuTypes.Count() == 0) && Model.Drinks.Count() > 0)
+    {
+        <h2>Drinks</h2>
+    }
     <ul class="menu">
-        @foreach (BleakwindBuffet.Data.Drinks.Drink d in BleakwindBuffet.Data.Menu.Drinks())
+        @foreach (BleakwindBuffet.Data.Drinks.Drink d in @Model.Drinks)
         {
             <li>
                 <div class="menu-item">
