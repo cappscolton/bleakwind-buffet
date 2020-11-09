@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="Website.Pages.AboutModel">
-    <Position X="1" Y="0.75" Width="1.5" />
+    <Position X="7.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
       <FileName>Pages\About.cshtml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Website.Pages.ErrorModel">
-    <Position X="3.25" Y="0.75" Width="3" />
+    <Position X="3.5" Y="0.75" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAIAAQAAAAAAAAAIAAAAAAAAAQAAAAAAAA=</HashCode>
       <FileName>Pages\Error.cshtml.cs</FileName>
@@ -17,26 +17,26 @@
   <Class Name="Website.Pages.IndexModel">
     <Position X="6.75" Y="0.75" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAIAAAAAAAAAQAAAAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAgAEIQAgAAAAAAAIAAAAAAAAAwAAAQAABA=</HashCode>
       <FileName>Pages\Index.cshtml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Website.Pages.PrivacyModel">
-    <Position X="1" Y="3.75" Width="3.25" />
+    <Position X="10" Y="3" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAQAAAAAAAA=</HashCode>
       <FileName>Pages\Privacy.cshtml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Website.Program">
-    <Position X="4.75" Y="3.75" Width="3.25" />
+    <Position X="3.25" Y="3.5" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Website.Startup">
-    <Position X="8.25" Y="3.75" Width="4.5" />
+    <Position X="10" Y="0.75" Width="4.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAgAAACAAAAAA=</HashCode>
       <FileName>Startup.cs</FileName>

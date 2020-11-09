@@ -160,9 +160,9 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="BleakwindBuffet.Data.Menu">
-    <Position X="28.5" Y="10.75" Width="2.75" />
+    <Position X="28.5" Y="10.75" Width="7.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgAAAQAgAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAgEAAQAgAAAAAAAAAAAAAAAEAIAAAAgAAA=</HashCode>
       <FileName>Menu.cs</FileName>
     </TypeIdentifier>
   </Class>

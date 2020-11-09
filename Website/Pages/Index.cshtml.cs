@@ -16,32 +16,60 @@ namespace Website.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-            MenuTypes = new string[] { "Entrees", "Sides", "Drinks" };
         }
 
+        /// <summary>
+        /// Holds values of categories of menu items to display. Can hold "Entrees" "Sides" and "Drinks" as values.
+        /// </summary>
         public string[] MenuTypes { get; set; }
 
+        /// <summary>
+        /// List of IOrderItem entrees to be dispalyed
+        /// </summary>
         public List<IOrderItem> Entrees { get; set; }
 
+        /// <summary>
+        /// List of IOrderItem drinks to be dispalyed
+        /// </summary>
         public List<IOrderItem> Drinks { get; set; }
 
+        /// <summary>
+        /// List of IOrderItem sides to be dispalyed
+        /// </summary>
         public List<IOrderItem> Sides { get; set; }
 
+        /// <summary>
+        /// Minimum calorie value to filter
+        /// </summary>
         [BindProperty(SupportsGet =true)]
         public double CaloriesMin { get; set; }
 
+        /// <summary>
+        /// Maximum calorie value to filter
+        /// </summary>
         [BindProperty(SupportsGet = true)]
         public double CaloriesMax { get; set; }
 
+        /// <summary>
+        /// Minimum price value to filter
+        /// </summary>
         [BindProperty(SupportsGet = true)]
         public double PriceMin { get; set; }
 
+        /// <summary>
+        /// Maximum price value to filter
+        /// </summary>
         [BindProperty(SupportsGet = true)]
         public double PriceMax { get; set; }
 
+        /// <summary>
+        /// String search terms to filter
+        /// </summary>
         public string SearchTerms { get; set; }
 
-
+        /// <summary>
+        /// Runs every time the page is refreshed or the form is submitted. Runs each filter and search function and assigns the menu items to be displayed
+        /// </summary>
         public void OnGet()
         {
             SearchTerms = Request.Query["SearchTerms"];
@@ -54,7 +82,5 @@ namespace Website.Pages
             Sides = menu[1];
             Drinks = menu[2];
         }
-
-        public int sodas = 0;
     }
 }

@@ -106,6 +106,11 @@ namespace BleakwindBuffet.Data
             return Entrees().Concat(Sides()).Concat(Drinks());
         }
 
+        /// <summary>
+        /// Filters menu items for website based on Text search terms
+        /// </summary>
+        /// <param name="s">terms entered by user</param>
+        /// <returns>List of Lists of IOrderItem. First list is entrees, second is sides, thrid is drinks.</returns>
         public static List<List<IOrderItem>> Search(string s)
         {
             if (s == null) return new List<List<IOrderItem>> { Entrees().ToList(), Sides().ToList(), Drinks().ToList() };
@@ -145,6 +150,12 @@ namespace BleakwindBuffet.Data
 
         }
 
+        /// <summary>
+        /// Filters results to be displayed on website menu based on the type of the item
+        /// </summary>
+        /// <param name="menu">Menu based on previous filters/terms</param>
+        /// <param name="types">Strings that specify types of itesm to be displayed</param>
+        /// <returns>List of Lists of IOrderItem. First list is entrees, second is sides, thrid is drinks.</returns>
         public static List<List<IOrderItem>> FilterByMenuType(List<List<IOrderItem>> menu, string[] types)
         {
             if (types == null || types.Count() == 0) return menu;
@@ -167,6 +178,14 @@ namespace BleakwindBuffet.Data
             return newmenu;
 
         }
+
+        /// <summary>
+        /// Filters results to be displayed on website menu based on the calories of the item
+        /// </summary>
+        /// <param name="menu">Menu based on previous filters/terms</param>
+        /// <param name="CaloriesMin">Min calories</param>
+        /// <param name="CaloriesMax">Max calires</param>
+        /// <returns>List of Lists of IOrderItem. First list is entrees, second is sides, thrid is drinks.</returns>
         public static List<List<IOrderItem>> FilterByCalories(List<List<IOrderItem>> menu, double CaloriesMin, double CaloriesMax)
         {
             if (CaloriesMin == 0 && CaloriesMax == 0) return menu;
@@ -205,6 +224,13 @@ namespace BleakwindBuffet.Data
 
         }
 
+        /// <summary>
+        /// Filters results to be displayed on website menu based on the price of the item
+        /// </summary>
+        /// <param name="menu">Menu based on previous filters/terms</param>
+        /// <param name="PriceMin">Minimum item price</param>
+        /// <param name="PriceMax">Max item price</param>
+        /// <returns>List of Lists of IOrderItem. First list is entrees, second is sides, thrid is drinks.</returns>
         public static List<List<IOrderItem>> FilterByPrice(List<List<IOrderItem>> menu, double PriceMin, double PriceMax)
         {
             if (PriceMin == 0 && PriceMax == 0) return menu;

@@ -31,20 +31,21 @@
         Drinks
     </label>
 
-    <h2>Calories</h2>
+    
     <div>
         Between
-        <input name="CaloriesMin" type="number" min="0" step="1" />
+        <input name="CaloriesMin" type="number" min="0" step="1" value="@Model.CaloriesMin"/>
         and
-        <input name="CaloriesMax" type="number" min="0" step="1" />
+        <input name="CaloriesMax" type="number" min="0" step="1" value="@Model.CaloriesMax"/>
+        calories
     </div>
 
-    <h2>Price</h2>
     <div>
         Between
-        <input name="PriceMin" type="number" min="0" step="0.01" />
+        <input name="PriceMin" type="number" min="0" step="0.01" value="@Model.PriceMin"/>
         and
-        <input name="PriceMax" type="number" min="0" step="0.01" />
+        <input name="PriceMax" type="number" min="0" step="0.01" value="@Model.PriceMax"/>
+        dollars
     </div>
 
 </form>
