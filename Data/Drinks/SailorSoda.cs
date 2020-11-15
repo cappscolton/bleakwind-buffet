@@ -23,6 +23,14 @@ namespace BleakwindBuffet.Data.Drinks
         public override event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
+        /// A description of a this drink
+        /// </summary>
+        public override string Description
+        {
+            get { return "An old-fashioned jerked soda, carbonated water and flavored syrup poured over a bed of crushed ice."; }
+        }
+
+        /// <summary>
         /// size of the drink, invokes PropertyChanged event on size, price, and calories
         /// </summary>
         public override Size Size

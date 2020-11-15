@@ -20,6 +20,14 @@ namespace BleakwindBuffet.Data.Entrees
         public override event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
+        /// A description of a this entree
+        /// </summary>
+        public override string Description
+        {
+            get { return "Vegetarian. Two egg omelette packed with a mix of broccoli, mushrooms, and tomatoes. Topped with cheddar cheese."; }
+        }
+
+        /// <summary>
         /// The price of the omelette
         /// </summary>
         public override double Price

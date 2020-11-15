@@ -25,6 +25,14 @@ namespace BleakwindBuffet.Data.Entrees
         private bool mustard = true;
 
         /// <summary>
+        /// A description of a this entree
+        /// </summary>
+        public override string Description
+        {
+            get { return "Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese."; }
+        }
+
+        /// <summary>
         /// event for implementing PropertyChange notifications
         /// </summary>
         public override event PropertyChangedEventHandler PropertyChanged;

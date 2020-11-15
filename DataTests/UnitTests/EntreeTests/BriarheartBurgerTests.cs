@@ -15,6 +15,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     public class BriarheartBurgerTests
     {
         [Fact]
+        public void ShouldHaveCorrectDescription()
+        {
+            BriarheartBurger x = new BriarheartBurger();
+            Assert.Equal("Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.", x.Description);
+        }
+        [Fact]
         public void ShouldImplementINotifyPropertyChanged()
         {
             BriarheartBurger aj = new BriarheartBurger();

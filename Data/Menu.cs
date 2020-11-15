@@ -116,38 +116,13 @@ namespace BleakwindBuffet.Data
             if (s == null) return new List<List<IOrderItem>> { Entrees().ToList(), Sides().ToList(), Drinks().ToList() };
 
             string term = s.ToLower();
+            string[] terms = term.Split();
 
-            List<IOrderItem> entrees = new List<IOrderItem>();
-            List<IOrderItem> sides = new List<IOrderItem>();
-            List<IOrderItem> drinks = new List<IOrderItem>();
+            IEnumerable<IOrderItem> entrees = Menu.Entrees().Where(item => terms.Any(item.ToString().ToLower().Contains) || terms.Any(item.Description.ToLower().Contains));
+            IEnumerable<IOrderItem> drinks = Menu.Drinks().Where(item => terms.Any(item.ToString().ToLower().Contains) || terms.Any(item.Description.ToLower().Contains));
+            IEnumerable<IOrderItem> sides = Menu.Sides().Where(item => terms.Any(item.ToString().ToLower().Contains) || terms.Any(item.Description.ToLower().Contains));
 
-            foreach (IOrderItem i in Entrees())
-            {
-                if (i.ToString().ToLower().Contains(term))
-                {
-                    entrees.Add(i);
-                }
-            }
-
-            foreach (IOrderItem i in Sides())
-            {
-                if (i.ToString().ToLower().Contains(term))
-                {
-                    sides.Add(i);
-                }
-            }
-
-            foreach (IOrderItem i in Drinks())
-            {
-                if (i.ToString().ToLower().Contains(term))
-                {
-                    drinks.Add(i);
-                }
-            }
-
-            return new List<List<IOrderItem>> { entrees, sides, drinks };
-
-
+            return new List<List<IOrderItem>> { entrees.ToList(), sides.ToList(), drinks.ToList() };
         }
 
         /// <summary>
@@ -159,24 +134,12 @@ namespace BleakwindBuffet.Data
         public static List<List<IOrderItem>> FilterByMenuType(List<List<IOrderItem>> menu, string[] types)
         {
             if (types == null || types.Count() == 0) return menu;
-            List<List<IOrderItem>> newmenu = new List<List<IOrderItem>>();
-            if (types.Contains("Entrees"))
-            {
-                newmenu.Add(menu[0]);
-            }
-            else newmenu.Add(new List<IOrderItem>());
-            if (types.Contains("Sides"))
-            {
-                newmenu.Add(menu[1]);
-            }
-            else newmenu.Add(new List<IOrderItem>());
-            if (types.Contains("Drinks"))
-            {
-                newmenu.Add(menu[2]);
-            }
-            else newmenu.Add(new List<IOrderItem>());
-            return newmenu;
 
+            menu[0] = menu[0].Where(item => types.Contains("Entrees")).ToList();
+            menu[1] = menu[1].Where(item => types.Contains("Sides")).ToList();
+            menu[2] = menu[2].Where(item => types.Contains("Drinks")).ToList();
+
+            return menu;
         }
 
         /// <summary>
@@ -186,41 +149,16 @@ namespace BleakwindBuffet.Data
         /// <param name="CaloriesMin">Min calories</param>
         /// <param name="CaloriesMax">Max calires</param>
         /// <returns>List of Lists of IOrderItem. First list is entrees, second is sides, thrid is drinks.</returns>
-        public static List<List<IOrderItem>> FilterByCalories(List<List<IOrderItem>> menu, double CaloriesMin, double CaloriesMax)
+        public static List<List<IOrderItem>> FilterByCalories(List<List<IOrderItem>> menu, double? CaloriesMin, double? CaloriesMax)
         {
-            if (CaloriesMin == 0 && CaloriesMax == 0) return menu;
-            if (CaloriesMin > 0 && CaloriesMax == 0) CaloriesMax = 10000;
-            List<List<IOrderItem>> newmenu = new List<List<IOrderItem>>();
+            if (CaloriesMin == null && CaloriesMax == null) return menu;
+            if (CaloriesMin > 0 && CaloriesMax == null) CaloriesMax = 10000;
 
-            List<IOrderItem> entrees = new List<IOrderItem>();
-            List<IOrderItem> sides = new List<IOrderItem>();
-            List<IOrderItem> drinks = new List<IOrderItem>();
+            menu[0] = menu[0].Where(item => item.Calories > CaloriesMin && item.Calories < CaloriesMax).ToList();
+            menu[1] = menu[1].Where(item => item.Calories > CaloriesMin && item.Calories < CaloriesMax).ToList();
+            menu[2] = menu[2].Where(item => item.Calories > CaloriesMin && item.Calories < CaloriesMax).ToList();
 
-            foreach (IOrderItem i in menu[0])
-            {
-                if (i.Calories > CaloriesMin && i.Calories < CaloriesMax)
-                {
-                    entrees.Add(i);
-                }
-            }
-
-            foreach (IOrderItem i in menu[1])
-            {
-                if (i.Calories > CaloriesMin && i.Calories < CaloriesMax)
-                {
-                    sides.Add(i);
-                }
-            }
-
-            foreach (IOrderItem i in menu[2])
-            {
-                if (i.Calories > CaloriesMin && i.Calories < CaloriesMax)
-                {
-                    drinks.Add(i);
-                }
-            }
-
-            return new List<List<IOrderItem>> { entrees, sides, drinks };
+            return menu;
 
         }
 
@@ -231,41 +169,16 @@ namespace BleakwindBuffet.Data
         /// <param name="PriceMin">Minimum item price</param>
         /// <param name="PriceMax">Max item price</param>
         /// <returns>List of Lists of IOrderItem. First list is entrees, second is sides, thrid is drinks.</returns>
-        public static List<List<IOrderItem>> FilterByPrice(List<List<IOrderItem>> menu, double PriceMin, double PriceMax)
+        public static List<List<IOrderItem>> FilterByPrice(List<List<IOrderItem>> menu, double? PriceMin, double? PriceMax)
         {
-            if (PriceMin == 0 && PriceMax == 0) return menu;
-            if (PriceMin > 0 && PriceMax == 0) PriceMax = 10000;
-            List<List<IOrderItem>> newmenu = new List<List<IOrderItem>>();
+            if (PriceMin == null && PriceMax == null) return menu;
+            if (PriceMin > 0 && PriceMax == null) PriceMax = 10000;
 
-            List<IOrderItem> entrees = new List<IOrderItem>();
-            List<IOrderItem> sides = new List<IOrderItem>();
-            List<IOrderItem> drinks = new List<IOrderItem>();
+            menu[0] = menu[0].Where(item => item.Price > PriceMin && item.Price < PriceMax).ToList();
+            menu[1] = menu[1].Where(item => item.Price > PriceMin && item.Price < PriceMax).ToList();
+            menu[2] = menu[2].Where(item => item.Price > PriceMin && item.Price < PriceMax).ToList();
 
-            foreach (IOrderItem i in menu[0])
-            {
-                if (i.Price > PriceMin && i.Price < PriceMax)
-                {
-                    entrees.Add(i);
-                }
-            }
-
-            foreach (IOrderItem i in menu[1])
-            {
-                if (i.Price > PriceMin && i.Price < PriceMax)
-                {
-                    sides.Add(i);
-                }
-            }
-
-            foreach (IOrderItem i in menu[2])
-            {
-                if (i.Price > PriceMin && i.Price < PriceMax)
-                {
-                    drinks.Add(i);
-                }
-            }
-
-            return new List<List<IOrderItem>> { entrees, sides, drinks };
+            return menu;
 
         }
     }

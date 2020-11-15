@@ -21,12 +21,13 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [InlineData("Smokehouse Skeleton")]
         public void TextFilteredMenuShouldIncludeText(string s)
         {
+            string[] terms = s.ToLower().Split();
             List<List<IOrderItem>> items = Menu.Search(s);
             foreach (List<IOrderItem> l in items)
             {
                 foreach(IOrderItem i in l)
                 {
-                    Assert.Contains(s.ToLower(), i.ToString().ToLower());
+                    Assert.True(terms.Any(i.Description.ToLower().Contains) || terms.Any(i.ToString().ToLower().Contains));
                 }
             }
         }

@@ -36,5 +36,9 @@ namespace BleakwindBuffet.Data.Entrees
                 return ToString();
             }
         }
+        /// <summary>
+        /// A description of the entree
+        /// </summary>
+        public abstract string Description { get; }
     }
 }

@@ -51,56 +51,76 @@
 </form>
 
 
-<div>
-    @if ((@Model.MenuTypes.Contains("Entrees") || Model.MenuTypes.Count() == 0) && Model.Entrees.Count() > 0)
+<div class="flex-columns">
+    @if (Model.Entrees.Count() > 0)
     {
-        <h2>Entrees</h2>
+        <div>
+            @if ((@Model.MenuTypes.Contains("Entrees") || Model.MenuTypes.Count() == 0))
+            {
+                <h2>Entrees</h2>
+            }
+            <ul class="menu">
+                @foreach (BleakwindBuffet.Data.Entrees.Entree d in @Model.Entrees)
+                {
+                    <li>
+                        <div class="menu-item">
+                            <div>@d.Name</div>
+                            <div>@d.Description</div>
+                            <div class="menu-item-detail">Price: $@d.Price</div>
+                            <div class="menu-item-detail">Calories: @d.Calories</div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
     }
-    <ul class="menu">
-        @foreach (BleakwindBuffet.Data.Entrees.Entree d in @Model.Entrees)
-        {
-            <li>
-                <div class="menu-item">
-                    <div>@d.Name</div>
-                    <div class="menu-item-detail">Price: $@d.Price</div>
-                    <div class="menu-item-detail">Calories: @d.Calories</div>
-                </div>
-            </li>
-        }
-    </ul>
-    @if ((@Model.MenuTypes.Contains("Sides") || Model.MenuTypes.Count() == 0) && Model.Sides.Count() > 0)
+
+    @if (Model.Sides.Count() > 0)
     {
-        <h2>Sides</h2>
+        <div>
+            @if ((@Model.MenuTypes.Contains("Sides") || Model.MenuTypes.Count() == 0) && Model.Sides.Count() > 0)
+            {
+                <h2>Sides</h2>
+            }
+            <ul class="menu">
+                @foreach (BleakwindBuffet.Data.Sides.Side d in @Model.Sides)
+                {
+                    <li>
+                        <div class="menu-item">
+                            <div>@d.Name</div>
+                            <div>@d.Description</div>
+                            <div class="menu-item-detail">Price: $@d.Price</div>
+                            <div class="menu-item-detail">Calories: @d.Calories</div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
     }
-    <ul class="menu">
-        @foreach (BleakwindBuffet.Data.Sides.Side d in @Model.Sides)
-        {
-            <li>
-                <div class="menu-item">
-                    <div>@d.Name</div>
-                    <div class="menu-item-detail">Price: $@d.Price</div>
-                    <div class="menu-item-detail">Calories: @d.Calories</div>
-                </div>
-            </li>
-        }
-    </ul>
-    @if ((@Model.MenuTypes.Contains("Drinks") || Model.MenuTypes.Count() == 0) && Model.Drinks.Count() > 0)
+
+    @if (Model.Drinks.Count() > 0)
     {
-        <h2>Drinks</h2>
+        <div>
+            @if ((@Model.MenuTypes.Contains("Drinks") || Model.MenuTypes.Count() == 0) && Model.Drinks.Count() > 0)
+            {
+                <h2>Drinks</h2>
+            }
+            <ul class="menu">
+                @foreach (BleakwindBuffet.Data.Drinks.Drink d in @Model.Drinks)
+                {
+                    <li>
+                        <div class="menu-item">
+                            <div>@d.Name</div>
+                            <div>@d.Description</div>
+                            <div class="menu-item-detail">Price: $@d.Price</div>
+                            <div class="menu-item-detail">Calories: @d.Calories</div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
     }
-    <ul class="menu">
-        @foreach (BleakwindBuffet.Data.Drinks.Drink d in @Model.Drinks)
-        {
-            <li>
-                <div class="menu-item">
-                    <div>@d.Name</div>
-                    <div class="menu-item-detail">Price: $@d.Price</div>
-                    <div class="menu-item-detail">Calories: @d.Calories</div>
-                </div>
-            </li>
-        }
-    </ul>
-</div>
+    </div>
 
 <div>
     <h2>Sailor Soda Flavors</h2>

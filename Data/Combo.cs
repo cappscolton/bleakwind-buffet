@@ -22,12 +22,29 @@ namespace BleakwindBuffet.Data
         {
 
         }
+
+        /// <summary>
+        /// Constructor taking the entree, drink and side items that make it up
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="d"></param>
+        /// <param name="s"></param>
         public Combo(IOrderItem e, IOrderItem d, IOrderItem s)
         {
             Entree = e;
             Drink = d;
             Side = s;
         }
+
+        /// <summary>
+        /// A description of the combo composed of descriptions of its items
+        /// </summary>
+        public string Description { get
+            {
+                return $"{Entree.Description}\n{Drink.Description}\n{Side.Description}";
+            }
+        }
+
         /// <summary>
         /// Allows us to get notifications when the details of this object have changed so that
         /// the properties can be updated, because the UI that uses this class depends on the value of the properties.

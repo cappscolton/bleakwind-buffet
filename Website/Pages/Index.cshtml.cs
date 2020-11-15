@@ -42,25 +42,25 @@ namespace Website.Pages
         /// Minimum calorie value to filter
         /// </summary>
         [BindProperty(SupportsGet =true)]
-        public double CaloriesMin { get; set; }
+        public double? CaloriesMin { get; set; }
 
         /// <summary>
         /// Maximum calorie value to filter
         /// </summary>
         [BindProperty(SupportsGet = true)]
-        public double CaloriesMax { get; set; }
+        public double? CaloriesMax { get; set; }
 
         /// <summary>
         /// Minimum price value to filter
         /// </summary>
         [BindProperty(SupportsGet = true)]
-        public double PriceMin { get; set; }
+        public double? PriceMin { get; set; }
 
         /// <summary>
         /// Maximum price value to filter
         /// </summary>
         [BindProperty(SupportsGet = true)]
-        public double PriceMax { get; set; }
+        public double? PriceMax { get; set; }
 
         /// <summary>
         /// String search terms to filter

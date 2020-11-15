@@ -27,6 +27,14 @@ namespace BleakwindBuffet.Data.Entrees
         private bool tomato = true;
 
         /// <summary>
+        /// A description of a this entree
+        /// </summary>
+        public override string Description
+        {
+            get { return "Double patty burger on a brioche bun. Comes with ketchup, mustard, pickle, cheese, tomato, lettuce, and mayo."; }
+        }
+
+        /// <summary>
         /// event for implementing PropertyChange notifications
         /// </summary>
         public override event PropertyChangedEventHandler PropertyChanged;

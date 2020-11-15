@@ -13,7 +13,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class PhillyPoacherTests
     {
-
+        [Fact]
+        public void ShouldHaveCorrectDescription()
+        {
+            PhillyPoacher x = new PhillyPoacher();
+            Assert.Equal("Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.", x.Description);
+        }
         [Fact]
         public void ShouldImplementINotifyPropertyChanged()
         {

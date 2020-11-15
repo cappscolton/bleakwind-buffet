@@ -23,6 +23,14 @@ namespace BleakwindBuffet.Data.Drinks
         public override event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
+        /// A description of a this drink
+        /// </summary>
+        public override string Description
+        {
+            get { return "It’s water. Just water."; }
+        }
+
+        /// <summary>
         /// size of the drink, invokes PropertyChanged event on size, price, and calories
         /// </summary>
         public override Size Size

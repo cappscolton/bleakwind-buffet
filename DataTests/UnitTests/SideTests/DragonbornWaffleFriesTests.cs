@@ -14,6 +14,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
     public class DragonbornWaffleFriesTests
     {
         [Fact]
+        public void ShouldHaveCorrectDescription()
+        {
+            DragonbornWaffleFries x = new DragonbornWaffleFries();
+            Assert.Equal("Crispy fried potato waffle fries.", x.Description);
+        }
+        [Fact]
         public void ShouldBeAnIOrderItem()
         {
             DragonbornWaffleFries aj = new DragonbornWaffleFries();

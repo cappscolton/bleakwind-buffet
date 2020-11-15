@@ -22,6 +22,15 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public override event PropertyChangedEventHandler PropertyChanged;
 
+
+        /// <summary>
+        /// A description of a this drink
+        /// </summary>
+        public override string Description
+        {
+            get { return "Fair trade, fresh ground dark roast coffee."; }
+        }
+
         /// <summary>
         /// size of the drink, invokes PropertyChanged event on size, price, and calories
         /// </summary>
